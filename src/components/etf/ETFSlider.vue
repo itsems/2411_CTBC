@@ -15,11 +15,10 @@
     >
       <SwiperSlide
         v-for="fund in funds"
-        class="flex items-center justify-center overflow-hidden rounded-3xl hover:shadow-xl"
+        class="flex items-stretch justify-center overflow-hidden rounded-3xl hover:shadow-xl"
         :key="fund.code"
       >
-        <!-- <EtfCard :key="etf.id" :fund="etf" /> -->
-        <div class="w-full px-5 pt-5 pb-6 bg-white rounded-2xl" :title="fund.name">
+        <div class="w-full h-full px-5 pt-5 pb-48 bg-white" :title="fund.name">
           <!-- ETF 類型 -->
           <div class="inline-block px-3 py-[3px] mb-4 text-sm border border-solid rounded-3xl border-main text-main">
             {{ fund.tag }}
@@ -29,35 +28,38 @@
             <EtfName :fund="fund" class="font-medium lg:text-base text-ellipsis hover:underline" />
           </RouterLink>
           
-          <!-- 基金淨值 -->
-          <div class="flex items-end justify-between mb-2 net-worth text-md">
-            <label class="text-[#999]">基金淨值</label>
-            <label class="text-3xl font-black text-[#333]">
-              {{ fund.netWorth }}
-            </label>
-          </div>
+          <!-- Bottom contents wrapper -->
+          <div class="absolute bottom-5 w-[calc(100%-2.5rem)]">
+            <!-- 基金淨值 -->
+            <div class="flex items-end justify-between mb-2 net-worth text-md">
+              <label class="text-[#999]">基金淨值</label>
+              <label class="text-3xl font-black text-[#333]">
+                {{ fund.netWorth }}
+              </label>
+            </div>
           
-          <div class="flex justify-between mb-1 text-md text-[#999]">
-            <label>日期</label>
-            <label class="font-medium">{{ fund.date }}</label>
+            <div class="flex justify-between mb-1 text-md text-[#999]">
+              <label>日期</label>
+              <label class="font-medium">{{ fund.date }}</label>
+            </div>
+            <div class="flex justify-between mb-1 text-md text-[#999]">
+              <label>日漲跌</label>
+              <label class="font-medium" :class="isUpOrDownClass(fund.fromPreviousDay)">
+                {{ fund.fromPreviousDay }}
+                <Symbol :number="fund.fromPreviousDay" />
+              </label>
+            </div>
+            <div class="flex justify-between text-md text-[#999] mb-6">
+              <label>漲跌幅}</label>
+              <label class="font-medium" :class="isUpOrDownClass(fund.fromPreviousDayPercent)">
+                {{ fund.fromPreviousDayPercent }}%
+                <Symbol :number="fund.fromPreviousDayPercent" />
+              </label>
+            </div>
+            <RouterLink :to="{ name: ROUTE_NAME.etf.detail.name, params: { id: fund.id } }" class="w-full">
+              <RoundButton label="詳細介紹" class="w-full" />
+            </RouterLink>
           </div>
-          <div class="flex justify-between mb-1 text-md text-[#999]">
-            <label>日漲跌</label>
-            <label class="font-medium" :class="isUpOrDownClass(fund.fromPreviousDay)">
-              {{ fund.fromPreviousDay }}
-              <Symbol :number="fund.fromPreviousDay" />
-            </label>
-          </div>
-          <div class="flex justify-between text-md text-[#999] mb-6">
-            <label>漲跌幅</label>
-            <label class="font-medium" :class="isUpOrDownClass(fund.fromPreviousDayPercent)">
-              {{ fund.fromPreviousDayPercent }}%
-              <Symbol :number="fund.fromPreviousDayPercent" />
-            </label>
-          </div>
-          <RouterLink :to="{ name: ROUTE_NAME.etf.detail.name, params: { id: fund.id } }" class="w-full">
-            <RoundButton label="詳細介紹" class="w-full" />
-          </RouterLink>
         </div>
       </SwiperSlide>
     </Swiper>
@@ -98,16 +100,6 @@ defineProps({
 </script>
 <style lang="scss">
 .etf-slider {
-  .name {
-    display: -webkit-box;
-    max-width: 1000px;
-    height: 16px * 1.5 * 2;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   @media (max-width: 992px) {
     .swiper-slide {
       width: calc(100% / 4 * 3);
@@ -116,10 +108,9 @@ defineProps({
       @apply shadow-lg;
     }
   }
-}
-</style>
-<style lang="scss" scoped>
-.text-ellipsis {
-  @include generateContentStyle(16px, 3, 1.3, 16px, 3);
+  .swiper-slide {
+    height: auto;
+    align-self: stretch;
+  }
 }
 </style>
