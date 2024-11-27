@@ -8,10 +8,10 @@
         alt="">
     </li>
     <li 
-      v-for="pageNumber in totalPage" 
+      v-for="pageNumber in visiblePageNumbers" 
       :key="pageNumber"
       :class="{ active: currentPage === pageNumber }"
-      @click="handleNumberClick( pageNumber )"
+      @click="handleNumberClick(pageNumber)"
       class="p-1 cursor-pointer pagination-element pagination-number"
     >
       {{ pageNumber }}
@@ -39,19 +39,42 @@ const props = defineProps({
     type: Number,
     default: 1,
   },
+  maxDisplayPageCount: {
+    type: Number,
+    default: 9,
+  }
 })
 
 const emit = defineEmits(['prev', 'next', 'page'])
 
-// totalPage
-const totalPage = parseInt(props.totalItems / props.perPage, 10)
+const totalPage = computed(() => Math.ceil(props.totalItems / props.perPage))
+const visiblePageNumbers = computed(() => {
+  const total = totalPage.value
+  const maxDisplay = props.maxDisplayPageCount
+  const current = props.currentPage
+
+  let start = Math.max(1, current - Math.floor(maxDisplay / 2))
+  let end = start + maxDisplay - 1
+
+  if (end > total) {
+    end = total
+    start = Math.max(1, end - maxDisplay + 1)
+  }
+
+  return Array.from({ length: end - start + 1 }, (_, i) => start + i)
+})
+
 
 // Switch page emits
 const handlePrevClick = () => {
-  emit('prev')
+  if (props.currentPage !== 1) {
+    emit('prev')
+  }
 }
 const handleNextClick = () => {
-  emit('next')
+  if (props.currentPage !== totalPage.value) {
+    emit('next')
+  }
 }
 
 // Paginate number

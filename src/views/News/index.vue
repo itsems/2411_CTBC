@@ -53,9 +53,10 @@
 
     <Pagination
       class="mt-10"
-      :totalItems="65"
-      @prev="navigate"
-      @next="navigate"
+      :totalItems="120"
+      :current-page="current"
+      @prev="navigatePage('prev')"
+      @next="navigatePage('next')"
       @page="handlePageClick"
     />
   </div>
@@ -143,8 +144,17 @@ const gotoNewsDetail = id => {
 }
 
 // Pagination
-const navigate = () => {}
+const current = ref(1)
+const navigatePage = type =>{
+  if (type === 'prev') {
+    current.value--
+  } else if (type === 'next') {
+    current.value++
+  }
+  console.log(current.value)
+}
 const handlePageClick = number => {
   console.log(number)
+  current.value = number
 }
 </script>
