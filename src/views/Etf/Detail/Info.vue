@@ -22,11 +22,14 @@
       <li class="td">2021/02/04</li>
       <li class="flex items-center th">經理費(年)</li>
       <li class="td">
-        <p>基金淨資產規模</p>
-        <ul class="ml-6 list-disc">
-          <li>50億以下(含)：0.50%</li>
-          <li>50億(不含)以上：0.45%</li>
-        </ul></li>
+        <div>
+          <p>基金淨資產規模</p>
+          <ul class="ml-6 list-disc">
+            <li>50億以下(含)：0.50%</li>
+            <li>50億(不含)以上：0.45%</li>
+          </ul>
+        </div>
+      </li>
       <li class="flex items-center th">保管費(年)</li>
       <li class="td">
         <p>基金淨資產規模</p>
