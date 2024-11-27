@@ -137,7 +137,7 @@ const esgIndex = {
 // navigate
 const navigate = (page, shouldOpenNewTab = false) => {
   if (page.name) {
-    if (shouldOpenNewTab) {
+    if (shouldOpenNewTab || page.shouldOpenNewTab) {
       const { href } = router.resolve({ name: page.name })
       window.open(href, '_blank')
     } else {

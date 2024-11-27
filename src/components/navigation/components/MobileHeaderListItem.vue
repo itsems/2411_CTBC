@@ -33,7 +33,7 @@ const emit = defineEmits(['page-click'])
 const router = useRouter()
 const navigate = page => {
   if (page.name) {
-    if (props.isNewTab) {
+    if (props.isNewTab || page.shouldOpenNewTab) {
       const { href } = router.resolve({ name: page.name })
       window.open(href, '_blank')
     } else {

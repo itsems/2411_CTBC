@@ -85,6 +85,13 @@
     "storeToRefs": true,
     "useSystemStore": true,
     "useStatusStore": true,
-    "useDataToggle": true
+    "useDataToggle": true,
+    "DirectiveBinding": true,
+    "MaybeRef": true,
+    "MaybeRefOrGetter": true,
+    "onWatcherCleanup": true,
+    "useId": true,
+    "useModel": true,
+    "useTemplateRef": true
   }
 }

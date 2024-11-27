@@ -78,10 +78,11 @@ export const fundSubPages = [
     label: '配息專區',
     name: ROUTE_NAME.fund.yield.name
   },
-  // {
-  //   label: '匯款手續費率表',
-  //   name: ROUTE_NAME.fund.fee.name
-  // }
+  {
+    label: 'ETF最新配息公告',
+    name: ROUTE_NAME.etf.latestDividend.name,
+    shouldOpenNewTab: true
+  }
 ]
 
 // ETF 專區
