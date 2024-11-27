@@ -5,17 +5,39 @@
     <PageTitle title="ETF總覽" :imagePath="PageTitleIcon" />
       
     <!-- ETF總覽 -->
-    <section class="mb-6 lg:mb-10 lg:w-[60%]">
+    <section class="mb-6 lg:mb-10">
       <div class="items-center mb-4 lg:flex">
         <p class="mb-3 lg:mb-0 lg:whitespace-nowrap lg:mr-6">ETF總覽</p>
-        <inputButtonGroup
-          class="mb-4 lg:mb-0 lg:mr-1 lg:w-full"
-          placeholder="搜尋證券簡稱 / 證券代碼"
-          button-text="送出"
-        />
+        <div class="lg:flex lg:flex-grow lg:items-center">
+          <inputButtonGroup
+            class="mb-4 lg:mb-0 lg:w-1/2 lg:mr-5"
+            placeholder="搜尋證券簡稱 / 證券代碼"
+            button-text="送出"
+          />
+          <!-- 熱門關鍵字 Start -->
+          <div class="hidden lg:flex lg:w-1/2">
+            <p class="shrink-0">熱門關鍵字：</p>
+            <div class="flex flex-wrap gap-3">
+              <RouterLink class="code-link" :to="{ name: ROUTE_NAME.etf.detail.name, params: { id: 0 }, query: route.query }" >
+                <span>00934</span>
+              </RouterLink>
+              <RouterLink class="code-link" :to="{ name: ROUTE_NAME.etf.detail.name, params: { id: 0 }, query: route.query }" >
+                <span>00773B</span>
+              </RouterLink>
+              <RouterLink class="code-link" :to="{ name: ROUTE_NAME.etf.detail.name, params: { id: 0 }, query: route.query }" >
+                <span>00795B</span>
+              </RouterLink>
+              <RouterLink class="code-link" :to="{ name: ROUTE_NAME.etf.detail.name, params: { id: 0 }, query: route.query }" >
+                <span>日本</span>
+              </RouterLink>
+            </div>
+          </div>
+        <!-- 熱門關鍵字 End -->
+        </div>
+
       </div>
 
-      <div class="items-center mb-4 lg:flex">
+      <div class="items-center mb-4 lg:flex lg:w-[60%]">
         <p class="mb-3 lg:mb-0 lg:whitespace-nowrap lg:mr-6">ETF名稱</p>
         <select class="selects">
           <option>請選擇ETF</option>
@@ -140,6 +162,7 @@
 <script setup>
 import PageTitleIcon from '@/assets/images/icon/scope.png'
 import { isUpOrDownClass } from '@/utils/is-up-or-down-class'
+const route = useRoute()
 const systemStore = useSystemStore()
 
 const ROUTE_NAME = inject('ROUTE_NAME')
