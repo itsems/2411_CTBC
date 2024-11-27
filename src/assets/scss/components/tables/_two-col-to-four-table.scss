@@ -16,6 +16,8 @@
     background-color: $mainGreen;
     color: #fff;
     text-align: left;
+    display: flex;
+    align-items: center;
   }
   .td {
     border-bottom: 1px solid #f4f4f4;
@@ -23,6 +25,9 @@
   @media (min-width: 1024px) {
     .th, .td {
       padding: 13px 25px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
     }
   }
   &.stripped-table {
