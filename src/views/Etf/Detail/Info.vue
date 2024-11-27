@@ -32,11 +32,13 @@
       </li>
       <li class="flex items-center th">保管費(年)</li>
       <li class="td">
-        <p>基金淨資產規模</p>
-        <ul class="ml-6 list-disc">
-          <li>50億以下(含)：0.18%</li>
-          <li>50億(不含)以上：0.16%</li>
-        </ul>
+        <div>
+          <p>基金淨資產規模</p>
+          <ul class="ml-6 list-disc">
+            <li>50億以下(含)：0.18%</li>
+            <li>50億(不含)以上：0.16%</li>
+          </ul>
+        </div>
       </li>
       <li class="th">保管銀行</li>
       <li class="td">兆豐國際商業銀行</li>
