@@ -1,23 +1,36 @@
 <template>
-  <ul class="grid grid-cols-3 lg:flex">
-    <li class="text-center lg:pl-5 lg:pr-11">
-      <p class="w-full mb-1 text-center lg:mb-3 text-md lg:text-base">最新淨值</p>
-      <p class="text-lg font-bold lg:text-4xl">{{ fund.netWorth }}</p>
-      <p class="text-xs font-medium lg:text-sm text-grey-999">{{ fund.date }}</p>
+  <ul class="flex flex-wrap justify-center overflow-hidden rounded-md lg:justify-start">
+    <li class="w-1/2 py-4 text-center lg:w-auto lg:pr-12 tab lg:text-left">
+      <p class="w-full text-center text-md label lg:text-left lg:pl-3">最新淨值</p>
+      <!-- 最新淨值 -->
+      <p class="py-2 text-3xl font-bold text-black lg:py-3">
+        {{ fund.netWorth }}
+      </p>
+      <p class="w-full mt-1 text-xs font-medium lg:mt-0 text-grey-999 lg:text-left lg:pl-2">
+        <!-- 日期 -->
+        {{ fund.date }}
+      </p>
     </li>
-    <li class="text-center center-tab lg:px-14">
-      <p class="w-full mb-1 text-center lg:mb-3 text-md lg:text-base">日漲跌</p>
-      <p :class="isUpOrDownClass( fund.fromPreviousDay )" class="text-lg font-medium lg:text-4xl">
+    <li class="w-1/2 py-4 text-center lg:w-1/4 tab">
+      <p class="w-full text-center text-md label">日漲跌</p>
+      <!-- 日漲跌 -->
+      <p :class="isUpOrDownClass( fund.fromPreviousDay )" class="py-2 text-3xl font-bold lg:py-3">
         {{ fund.fromPreviousDay }}
         <Symbol :number="fund.fromPreviousDay" />
       </p>
     </li>
-    <li class="text-center lg:pl-10">
-      <p class="w-full mb-1 text-center lg:mb-3 text-md lg:text-base">漲跌幅</p>
-      <p :class="isUpOrDownClass( fund.fromPreviousDayPercent )" class="text-lg font-medium lg:text-4xl">
-        {{ fund.fromPreviousDayPercent }}%
+    <li class="w-1/2 py-4 text-center lg:w-1/4 tab">
+      <p class="w-full text-center text-md label">漲跌幅</p>
+      <!-- 漲跌幅 -->
+      <p :class="isUpOrDownClass( fund.fromPreviousDayPercent )" class="py-2 text-3xl font-bold lg:py-3">
+        {{ fund.fromPreviousDayPercent }}
         <Symbol :number="fund.fromPreviousDayPercent" />
       </p>
+    </li>
+    <li class="w-1/2 py-4 text-center lg:w-1/4 tab">
+      <p class="w-full text-center text-md label">風險屬性</p>
+      <!-- 風險屬性 -->
+      <RiskLevel :level="fund.riskLevel"></RiskLevel>
     </li>
   </ul>
 </template>
@@ -34,22 +47,33 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-  .center-tab {
+  .tab {
     position: relative;
-    &:after, &:before {
-      content: '';
-      display: inline-block;
-      position: absolute;
-      height: 100%;
-      width: 2px;
-      background-color: #c4cdce;
-      top: 0;
+    @media (max-width: 1024px) {
+      &:nth-child(odd) {
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          height: 55%;
+          width: 2px;
+          background-color: $grey;
+          right: 0;
+          top: 20%;
+        }
+      }
     }
-    &:after {
-      left: 0%;
-    }
-    &:before {
-      right: 0%;
+    @media (min-width: 1024px) {
+      &:not(:last-of-type):after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        height: 50%;
+        width: 1px;
+        background-color: $grey;
+        right: 0;
+        top: 23%;
+      }
     }
   }
 </style>

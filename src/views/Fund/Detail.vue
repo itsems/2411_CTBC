@@ -1,12 +1,11 @@
 <template>
-  <GradientBackground :mobile-position="580" :desktop-position="450" />
   <div>
     
     <!-- 基金總覽 內頁-->
     <div class="pb-0 mb-4 page-layout">
       <Breadcrumb :list="breadCrumbList" />
-      <div class="items-center justify-between lg:flex lg:mb-2">
-        <RoundButton @click="openModal" label="切換其他基金" class="w-full mb-4 lg:w-auto lg:order-2 lg:!px-5 lg:mb-0" />
+      <div class="items-center justify-between lg:gap-1 lg:flex lg:mb-2">
+        <RoundButton @click="openModal" label="切換其他基金" class="w-full mb-4 shrink-0 lg:w-auto lg:order-2 lg:!px-5 lg:mb-0" />
         <p class="mb-4 lg:mb-2 text-2xl lg:text-3xl text-[#333]">{{ fakeData.name }}</p>
       </div>
 

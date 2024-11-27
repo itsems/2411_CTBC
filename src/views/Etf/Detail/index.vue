@@ -19,7 +19,7 @@
     <EtfName :fund="fakeData" class="mb-5 lg:mb-8 text-2xl lg:text-3xl text-[#333]" />
     
     <!-- 最新狀態 -->
-    <EtfInfoBox :fund="fakeData" class="mb-6 lg:mb-10" />
+    <EtfInfoBox :fund="fakeData" class="lg:w-2/3" />
 
     <!-- 內頁分頁下拉&tabs -->
     <select v-model="currentTab" class="mb-5 selects lg:hidden" @change="handleTabPageChange(currentTab)">
@@ -103,7 +103,8 @@ const fakeData = {
   date: '2024/03/15',
   fromPreviousDay: -0.13,
   fromPreviousDayPercent: -1.23,
-  warning: '名稱後警語名稱後警語名稱後警語'
+  warning: '名稱後警語名稱後警語名稱後警語',
+  riskLevel: 4,
 }
 
 
