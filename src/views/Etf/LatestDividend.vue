@@ -103,6 +103,7 @@ const ROUTE_NAME = inject('ROUTE_NAME')
 
 const breadCrumbList = [
   { name: '首頁', routeName: ROUTE_NAME.etf.index },
+  { name: '配息專區', routeName: undefined },
   { name: 'ETF最新配息公告', routeName: undefined },
 ]
 

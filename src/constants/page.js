@@ -60,6 +60,7 @@ export const ROUTE_NAME = {
     download: { name: 'EtfDownload', path: 'Download' },
     income: { name: 'EtfIncomeEqualization', path: 'IncomeEqualization' },
     latestDividend: { name: 'EtfLatestDividend', path: 'LatestDividend' },
+    calendar: { name: 'EtfCalendar', path: 'calendar' },
     news: {
       index: 'EtfNews',
       list: { name: 'EtfNewsList', path: 'List' },

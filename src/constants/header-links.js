@@ -96,8 +96,22 @@ export const etfSubPages = [
     name: ROUTE_NAME.etf.realTime.name
   },
   {
-    label: '配息資訊',
-    name: ROUTE_NAME.etf.dividend.name
+    label: '配息專區',
+    name: ROUTE_NAME.etf.dividend.name,
+    subPages: [
+      {
+        label: '配息資訊',
+        name: ROUTE_NAME.etf.dividend.name,
+      },
+      {
+        label: '配息行事曆',
+        name: ROUTE_NAME.etf.calendar.name,
+      },
+      {
+        label: 'ETF最新配息公告',
+        name: ROUTE_NAME.etf.latestDividend.name,
+      }
+    ]
   },
   {
     label: '申購買回清單',

@@ -252,6 +252,12 @@ const router = createRouter({
       component: () => import('@/views/Etf/Dividend.vue'),
     },
     {
+      path: `/${ROUTE_NAME.etf.index}/${ROUTE_NAME.etf.calendar.path}`,
+      name: ROUTE_NAME.etf.calendar.name,
+      meta: { title: '配息行事曆' },
+      component: () => import('@/views/Etf/Calendar.vue'),
+    },
+    {
       path: `/${ROUTE_NAME.etf.index}/${ROUTE_NAME.etf.buyback.path}`,
       name: ROUTE_NAME.etf.buyback.name,
       meta: { title: '申購買回清單' },

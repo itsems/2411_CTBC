@@ -40,7 +40,7 @@
   <HamHeader :is-visible="shouldMenuShow" :should-show-search-input="false" @page-click="toggleMenu" >
     <MobileHeaderListItem title="ETF總覽" :to="ROUTE_NAME.etf.list.name" @click="toggleMenu"  />
     <MobileHeaderListItem title="即時預估淨值" :to="ROUTE_NAME.etf.realTime.name" @click="toggleMenu" />
-    <MobileHeaderListItem title="配息資訊" :to="ROUTE_NAME.etf.dividend.name" @click="toggleMenu" />
+    <MobileHeaderListItem title="配息資訊" :sub-pages="etfDividendSubPages" @page-click="toggleMenu" />
     <MobileHeaderListItem title="申購買回清單" :to="ROUTE_NAME.etf.buyback.name" @click="toggleMenu" />
     <MobileHeaderListItem title="追蹤差距" :to="ROUTE_NAME.etf.track.name" @click="toggleMenu" />
     <MobileHeaderListItem title="交易資訊" :sub-pages="etfTransactionSubPages" @page-click="toggleMenu" />
@@ -52,6 +52,7 @@
 import { etfSubPages } from '@/constants/header-links'
 
 const etfTransactionSubPages = etfSubPages[5].subPages
+const etfDividendSubPages = etfSubPages[2].subPages
 
 const ROUTE_NAME = inject('ROUTE_NAME')
 const router = useRouter()

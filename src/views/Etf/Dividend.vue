@@ -108,6 +108,7 @@ import PageTitleIcon from '@/assets/images/icon/etf-dividend-s.png'
 const ROUTE_NAME = inject('ROUTE_NAME')
 const breadCrumbList = [
   { name: '首頁', routeName: ROUTE_NAME.etf.index },
+  { name: '配息專區', routeName: undefined },
   { name: '配息資訊', routeName: undefined },
 ]
 
