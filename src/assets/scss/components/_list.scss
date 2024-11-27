@@ -1,0 +1,16 @@
+.list-custom-disc {
+  margin-left: 20px;
+}
+.list-custom-disc li {
+  list-style: none;
+  position: relative;
+  &:before {
+    content: '●';
+    color: #007c7d;
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 4px;
+    font-size: 10px;
+  }
+}

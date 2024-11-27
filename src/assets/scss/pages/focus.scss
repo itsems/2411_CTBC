@@ -1,0 +1,10 @@
+.focus-top-bg {
+  height: 210px;
+  background-image: url('@/assets/images/bg-focus.png');
+  @apply w-full absolute top-[66px] left-1/2 -translate-x-1/2;
+  @media (min-width: 1024px) {
+    height: 240px;
+    top: 75px;
+    background-size: cover;
+  }
+}

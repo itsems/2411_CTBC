@@ -1,0 +1,207 @@
+// ----------------
+// hams settings
+// ----------------
+$ham-total-height: 25px;
+$ham-total-width: 30px;
+$ham-height: 6px;
+$ham-radius: 10px;
+
+// colors
+$ham-nav-color: white;
+$ham-content-bg: white;
+$ham-txt-color: $darkGreen;
+
+// positions
+$sec-ham-top: 10px;
+$ham-top: 10px;
+$ham-right: 28px;
+$full: true;
+
+.header {
+  padding: 10.5px 12px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: all 0.3s;
+  background-color: $darkGreen;
+  z-index: 1;
+  @media (min-width: 1024px) {
+    padding: 0 15px;
+    z-index: 9;
+  }
+  // header-m;
+  .header-m {
+    .logo {
+      width: 175px;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    .ham {
+      width: $ham-total-width;
+      height: $ham-total-height;
+      position: absolute;
+      right: $ham-right;
+      top: 20px;
+      z-index: 4;
+      .ham-nav {
+        width: 100%;
+        height: 4px;
+        background-color: $ham-nav-color;
+        position: absolute;
+        right: 0;
+        transition: all 0.3s;
+        border-radius: $ham-radius;
+      }
+      .ham-top {
+        top: 0;
+      }
+      .ham-mid {
+        top: $sec-ham-top;
+      }
+      .ham-bot {
+        bottom: 0;
+      }
+      &.active {
+        right: 26px;
+        top: 22px;
+        .ham-nav {
+          height: $ham-height;
+        }
+        > .ham-mid {
+          display: none;
+        }
+        > .ham-top {
+          top: 10px;
+          transform: rotate(-45deg);
+        }
+        > .ham-bot {
+          width: 100%;
+          top: 10px;
+          transform: rotate(225deg);
+        }
+      }
+    }
+  }
+  .header-d {
+    .logo {
+      width: 175px;
+    }
+    .header-list.etf-header {
+      > li {
+        padding: 26px 10px 26px 10px;
+      }
+    }
+    .header-list {
+      display: flex;
+      > li {
+        font-size: 15px;
+        padding: 26px 15px 26px 15px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: left top;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: white;
+        .sub-menu {
+          width: max-content;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 100%;
+          background-color: white;
+          text-align: center;
+          color: #fff;
+          transition: all 0.3s;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          .label {
+            color: $darkGreen;
+          }
+          li {
+            font-size: 17px;
+            padding: 15px 20px;
+            transition: all 0.3s;
+            &:not(:last-of-type) {
+              border-bottom: 1px solid #eee;
+            }
+            &:hover {
+              background-color: $darkGreen;
+              .label {
+                color: #fff;
+              }
+            }
+          }
+        }
+        &:hover {
+          background-color: $darkGreen;
+          > .sub-menu {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+          }
+        }
+      }
+    }
+    .language-switch-button {
+      border: 1px solid $mainGreen;
+      color: $mainGreen;
+      font-size: 14px;
+      padding: 5px 18px;
+      border-radius: 5px;
+      transition: all 0.3s;
+      &:hover {
+        background-color: $mainGreen;
+        color: #fff;
+      }
+    }
+  }
+}
+.ham-content {
+  width: 312px;
+  transition: all .3s;
+  right: -100%;
+  background-color: $ham-content-bg;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  &.active {
+    right: 0;
+  }
+  @if $full == true {
+    bottom: 0;
+  }
+  z-index: 99;
+  .logo {
+    width: 200px;
+  }
+  .ham {
+    width: 30px;
+    height: 30px;
+    // position: relative;
+    z-index: 4;
+    .ham-nav {
+      height: $ham-height;
+      left: 0;
+      top: $ham-top;
+      background-color: $ham-nav-color;
+      position: absolute;
+      border-radius: 10px;
+    }
+    .ham-top {
+      width: 100%;
+      transform: rotate(-45deg);
+    }
+    .ham-bot {
+      width: 100%;
+      transform: rotate(225deg);
+    }
+  }
+}

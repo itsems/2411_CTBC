@@ -1,0 +1,8 @@
+.badge {
+  @apply px-3 lg:px-4 mr-2 py-[.3rem] border border-solid border-[#a6a6a6] text-[#a6a6a6] rounded-3xl inline-block text-center mb-2 cursor-pointer lg:hover:text-white lg:hover:bg-main lg:hover:border-main lg:mb-0 min-w-[57px] select-none;
+  &.active {
+    background-color: $mainGreen;
+    color: #fff;
+    border-color: $mainGreen;
+  }
+}

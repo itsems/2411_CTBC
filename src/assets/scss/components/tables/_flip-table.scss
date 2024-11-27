@@ -1,0 +1,42 @@
+.flip-table {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  @media (max-width: 1024px) {
+    tbody, tr, th, td {
+      display: block;
+    }
+  }
+  th, td {
+    vertical-align: middle;
+  }
+  .th, .td {
+    padding: 10px 15px;
+    font-size: 15px;
+    color: #666;
+    border: 1px solid #fff;
+  }
+  .th {
+    background-color: $mainGreen;
+    color: #fff;
+    text-align: left;
+  }
+  .td {
+    background-color: #f4f4f4;
+  }
+  &.stripped-table {
+    .td {
+      background-color: #fff;
+    }
+    @media (max-width: 1024px) {
+      tr .td:first-of-type {
+       background-color: #f4f4f4;
+      } 
+    }
+    @media (min-width: 1024px) {
+      tr:nth-child(even) .td {
+       background-color: #f4f4f4;
+      } 
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.normal-table {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: transparent;
+  th, td {
+    padding: 10px 15px;
+    font-size: 15px;
+    vertical-align: middle;
+  }
+  th {
+    background-color: $mainGreen;
+    color: #fff;
+  }
+  td {
+    background-color: #fff;
+    vertical-align: middle;
+  }
+  tr:nth-child(even) td {
+    background-color: #f4f4f4;
+  }
+  &.condensed {
+    th, td {
+      padding: 10px 5px;
+    }
+  }
+  &.has-fix-first-col {
+    @media (max-width: 992px) {
+      overflow: unset;
+    }
+  }
+  &.no-stripped-bg {
+    tr:nth-child(even) td {
+      background-color: #fff;
+    }
+  }
+}

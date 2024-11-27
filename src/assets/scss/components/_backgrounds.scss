@@ -1,0 +1,12 @@
+.gradient-text-square {
+  @apply bg-no-repeat p-6 lg:px-8 lg:py-7 tracking-wide lg:tracking-normal leading-7 lg:leading-8 rounded-3xl bg-cover bg-left-top mb-6 text-md lg:text-base;
+  background-image: url('@/assets/images/bg-text-square.png');
+}
+.bg-cloud {
+  @apply bg-top;
+  background-image: url('@/assets/images/index/bg-video.png');
+}
+.bg-gradient {
+  @apply bg-center;
+  background-image: url('@/assets/images/bg-gradient-lg.png');
+}

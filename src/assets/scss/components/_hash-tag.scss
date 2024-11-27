@@ -1,0 +1,6 @@
+.hash-tag {
+  @apply py-[2px] bg-white rounded-2xl text-grey-999 hover:text-main cursor-pointer hover:border-main;
+  &.active {
+    @apply text-main;
+  }
+}

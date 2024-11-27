@@ -1,0 +1,71 @@
+.mobile-th-row-table {
+  @apply lg:bg-white rounded-2xl;
+  .desktop-th {
+    @apply hidden text-white text-center bg-main;
+    li {
+      padding: 10px 15px;
+    }
+    @media (min-width: 1024px) {
+      display: grid;
+      grid-auto-columns: minmax(0, 1fr);
+      grid-auto-flow: column;
+      align-items: center;
+      li {
+        padding: 15px 10px;
+      }
+    }
+  }
+  .data-row {
+    @apply grid bg-white break-all ;
+    @media (max-width: 1023px) {
+      grid-template-columns: max-content auto;
+      border-radius: 15px;
+      @apply overflow-hidden shadow-xl;
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+    }
+    @media (min-width: 1024px) {
+      grid-auto-columns: minmax(0, 1fr);
+      grid-auto-flow: column;
+      &:nth-child(even) {
+        background-color: #f4f4f4;
+      }
+    }
+  }
+  .th,
+  .td {
+    padding: 10px 15px;
+    @media (min-width: 1024px) {
+      padding: 15px 10px;
+    }
+  }
+  .th {
+    display: flex;
+    align-items: center;
+    @apply bg-main text-white;
+    @media (min-width: 1024px) {
+      @apply hidden
+    }
+  }
+  @media (min-width: 1024px) {
+    border-radius: 15px;
+    @apply overflow-hidden shadow-xl;
+  }
+  &.stripped-on-mobile-row {
+    @media (max-width: 1024px) {
+      .td {
+        background-color: #f4f4f4;
+      }
+      .th ~ .td:nth-child(4n + 2) {
+        @apply bg-white;
+      }
+    }
+  }
+  .row-th-odd {
+    background-color: #209899;
+  }
+  .row-td-odd {
+    background-color: #f4f4f4;
+  }
+}

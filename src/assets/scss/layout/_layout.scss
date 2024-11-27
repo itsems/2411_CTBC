@@ -1,0 +1,12 @@
+.page-layout {
+  width: 100%;
+  max-width: 1110px;
+  position: relative;
+  margin: 0 auto;
+  @media (max-width: 1200px) {
+    padding: 23px 26px;
+  }
+  @media (min-width: 1200px) {
+    padding: 24px 0;
+  }
+}

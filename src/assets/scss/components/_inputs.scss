@@ -1,0 +1,7 @@
+.inputs {
+  @apply transitions hover:border-main focus:border-main border border-solid rounded-md py-2 px-4 lg:py-2 lg:px-5 bg-white border-[#f4f4f4];
+}
+.form-inputs {
+  @extend .inputs;
+  @apply w-full bg-white border rounded-3xl border-grey;
+}

@@ -1,0 +1,42 @@
+@mixin generateContentStyle(
+  $font-size,
+  $line-count,
+  $line-height: 1.5,
+  $desktop-font-size: $font-size,
+  $desktop-line-count: $line-count
+) {
+  $max-height: $font-size * $line-height * $line-count;
+  $desktop-max-height: $desktop-font-size * $line-height * $desktop-line-count;
+
+  display: -webkit-box;
+  max-width: 1000px;
+  height: $max-height;
+  -webkit-line-clamp: $line-count;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: $line-height;
+
+  @media (min-width: 1023px) {
+    height: $desktop-max-height;
+    -webkit-line-clamp: $desktop-line-count;
+  }
+}
+@mixin generateDesktopContentStyle(
+  $line-height: 1.5,
+  $desktop-font-size: $font-size,
+  $desktop-line-count: $line-count
+) {
+  $desktop-max-height: $desktop-font-size * $line-height * $desktop-line-count;
+
+  @media (min-width: 1023px) {
+    display: -webkit-box;
+    max-width: 1000px;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: $line-height;
+    height: $desktop-max-height;
+    -webkit-line-clamp: $desktop-line-count;
+  }
+}

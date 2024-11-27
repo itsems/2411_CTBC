@@ -1,0 +1,36 @@
+.fix-head-table-wrap {
+  @media (min-width: 992px) {
+    overflow: unset !important;
+  }
+}
+
+.fix-head-table {
+  @media (min-width: 992px) {
+    overflow: unset !important;
+    th {
+      position: sticky;
+      top: 0;
+      &:first-of-type {
+        border-top-left-radius: 15px;
+      }
+      &:last-of-type {
+        border-top-right-radius: 15px;
+      }
+    }
+    tr:last-of-type {
+      td:first-of-type {
+        border-bottom-left-radius: 15px;
+      }
+      td:last-of-type {
+        border-bottom-right-radius: 15px;
+      }
+    }
+  }
+}
+
+.fix-first-col {
+  @media (max-width: 992px) {
+    position: sticky;
+    left: 0;
+  } 
+}
