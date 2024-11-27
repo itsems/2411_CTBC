@@ -25,7 +25,7 @@
           </div>
           <!-- 基金名稱 -->
           <RouterLink :to="{ name: ROUTE_NAME.etf.detail.name, params: { id: 0 } }">
-            <EtfName :fund="fund" class="font-medium lg:text-base text-ellipsis hover:underline" />
+            <EtfName :fund="fund" class="font-medium lg:text-base hover:underline" />
           </RouterLink>
           
           <!-- Bottom contents wrapper -->

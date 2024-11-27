@@ -1,7 +1,7 @@
 <template>
   <div class="p-0 mb-4 overflow-hidden content-card">
     <div class="px-4 py-3">
-      <p class="text-md text-ellipsis">{{ fund.code }} {{ fund.name }}<span v-if="fund.warning" class="text-red">({{ fund.warning }})</span></p>
+      <p class="text-md">{{ fund.code }} {{ fund.name }}<span v-if="fund.warning" class="text-red">({{ fund.warning }})</span></p>
     </div>
     <div class="px-4 py-3">
       <div class="grid grid-cols-2">

@@ -6,7 +6,7 @@
     >
       <RouterLink
         :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: fund.id } }"
-        class="mb-6 font-medium text-ellipsis hover:underline"
+        class="block mb-6 font-medium hover:underline"
       >
         {{ fund.name }}
         <span v-if="fund.warning" class="text-red">({{fund.warning}})</span>
@@ -50,8 +50,3 @@ defineProps({
   },
 })
 </script>
-<style lang="scss" scoped>
-.text-ellipsis {
-  @include generateContentStyle(16px, 3, 1.3, 16px, 3);
-}
-</style>

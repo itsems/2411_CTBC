@@ -2,7 +2,7 @@
   <div class="w-full px-5 py-5 bg-white rounded-3xl" :title="fund.name">
     <!-- 基金名稱 -->
     <RouterLink :to="{ name: ROUTE_NAME.etf.detail.name, params: { id: 0 } }">
-      <div class="mb-6 font-medium text-ellipsis name hover:underline">
+      <div class="mb-6 font-medium hover:underline">
         <EtfName :fund="fund" />
       </div>
     </RouterLink>
@@ -59,8 +59,3 @@ defineProps({
   },
 })
 </script>
-<style lang="scss" scoped>
-.text-ellipsis {
-  @include generateContentStyle(16px, 3, 1.3, 16px, 3);
-}
-</style>

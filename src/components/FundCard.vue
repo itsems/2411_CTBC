@@ -1,21 +1,20 @@
 <template>
-  <div class="flex items-center justify-center mb-4 fund-card-wrap lg:mb-3 lg:h-auto">
-    <div
-      class="w-full px-5 pt-8 pb-6 bg-white shadow-2xl rounded-3xl"
-      :title="fund.name"
+  <div class="relative w-full px-5 pt-5 pb-56 bg-white shadow-2xl rounded-3xl" :title="fund.name">
+    <RouterLink
+      :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: fund.id } }"
+      class="block mb-4 text-lg font-medium hover:underline"
     >
-      <RouterLink
-        :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: fund.id } }"
-        class="block mb-4 text-lg font-medium hover:underline"
-      >
-        <p class="text-ellipsis">
-          {{ fund.name }}
-          <span v-if="fund.warning" class="text-red">({{ fund.warning }})</span>
-        </p>  
-      </RouterLink>
+      <p>
+        {{ fund.name }}
+        <span v-if="fund.warning" class="text-red">({{ fund.warning }})</span>
+      </p>  
+    </RouterLink>
+      
+    <!-- Bottom contents wrapper -->
+    <div class="absolute bottom-5 w-[calc(100%-2.5rem)]">
       <div class="flex justify-between mb-1 text-grey-999 text-md">
         <label>基金淨值</label>
-        <label class="font-medium text-black">
+        <label class="text-3xl font-black text-[#333]">
           {{ fund.netWorth }}
         </label>
       </div>
@@ -53,8 +52,3 @@ defineProps({
   },
 })
 </script>
-<style lang="scss" scoped>
-.text-ellipsis {
-  @include generateContentStyle(18px, 3, 1.3, 18px, 3);
-}
-</style>
