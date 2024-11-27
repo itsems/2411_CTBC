@@ -159,24 +159,24 @@ const router = createRouter({
         {
           path: ROUTE_NAME.fund.list.path,
           name: ROUTE_NAME.fund.list.name,
-          component: () => import('@/views/Fund/List.vue')
+          component: () => import('@/views/Product/List.vue')
         },
         {
           path: ROUTE_NAME.fund.fee.path,
           name: ROUTE_NAME.fund.fee.name,
           meta: { title: '基金匯款帳號暨手續費率表' },
-          component: () => import('@/views/Fund/Fee.vue'),
+          component: () => import('@/views/Product/Fee.vue'),
           redirect: { name: ROUTE_NAME.fund.account.name },
           children: [
             {
               path: ROUTE_NAME.fund.account.path,
               name: ROUTE_NAME.fund.account.name,
-              component: () => import('@/views/Fund/Fee/Account.vue')
+              component: () => import('@/views/Product/Fee/Account.vue')
             },
             {
               path: ROUTE_NAME.fund.rate.path,
               name: ROUTE_NAME.fund.rate.name,
-              component: () => import('@/views/Fund/Fee/Rate.vue')
+              component: () => import('@/views/Product/Fee/Rate.vue')
             }
           ]
         },
@@ -184,44 +184,44 @@ const router = createRouter({
           path: ROUTE_NAME.fund.yield.path,
           name: ROUTE_NAME.fund.yield.name,
           meta: { title: '配息專區' },
-          component: () => import('@/views/Fund/Yield.vue')
+          component: () => import('@/views/Product/Yield.vue')
         },
         {
           path: ROUTE_NAME.fund.calendar.path,
           name: ROUTE_NAME.fund.calendar.name,
           meta: { title: '基金行事曆' },
-          component: () => import('@/views/Fund/Calendar.vue')
+          component: () => import('@/views/Product/Calendar.vue')
         },
         {
           path: ':id',
           name: ROUTE_NAME.fund.detail.name,
-          component: () => import('@/views/Fund/Detail.vue'),
+          component: () => import('@/views/Product/Detail.vue'),
           redirect: { name: ROUTE_NAME.fund.info.name },
           children: [
             {
               path: ROUTE_NAME.fund.info.path,
               name: ROUTE_NAME.fund.info.name,
-              component: () => import('@/views/Fund/Detail/Info.vue')
+              component: () => import('@/views/Product/Detail/Info.vue')
             },
             {
               path: ROUTE_NAME.fund.trend.path,
               name: ROUTE_NAME.fund.trend.name,
-              component: () => import('@/views/Fund/Detail/Trend.vue')
+              component: () => import('@/views/Product/Detail/Trend.vue')
             },
             {
               path: ROUTE_NAME.fund.performance.path,
               name: ROUTE_NAME.fund.performance.name,
-              component: () => import('@/views/Fund/Detail/Performance.vue')
+              component: () => import('@/views/Product/Detail/Performance.vue')
             },
             {
               path: ROUTE_NAME.fund.shareHolding.path,
               name: ROUTE_NAME.fund.shareHolding.name,
-              component: () => import('@/views/Fund/Detail/ShareHolding.vue')
+              component: () => import('@/views/Product/Detail/ShareHolding.vue')
             },
             {
               path: ROUTE_NAME.fund.dividend.path,
               name: ROUTE_NAME.fund.dividend.name,
-              component: () => import('@/views/Fund/Detail/Dividend.vue')
+              component: () => import('@/views/Product/Detail/Dividend.vue')
             }
           ]
         }

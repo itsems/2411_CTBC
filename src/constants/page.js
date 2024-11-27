@@ -32,19 +32,19 @@ export const ROUTE_NAME = {
     outsidePartner: { name: 'AboutOutsidePartner', path: 'OutsidePartner' }
   },
   fund: {
-    index: 'Fund',
-    list: { name: 'FundList', path: 'List' },
-    detail: { name: 'FundDetail' },
-    info: { name: 'FundInfo', path: 'Info' },
-    trend: { name: 'FundTrend', path: 'Trend' },
-    performance: { name: 'FundPerformance', path: 'Performance' },
-    shareHolding: { name: 'FundShareHolding', path: 'ShareHolding' },
-    dividend: { name: 'FundDividend', path: 'Dividend' },
-    fee: { name: 'FundFee', path: 'Fee' },
-    account: { name: 'FundFeeAccount', path: 'Account' },
-    rate: { name: 'FundFeeRate', path: 'Rate' },
-    yield: { name: 'FundYield', path: 'Yield' },
-    calendar: { name: 'FundCalendar', path: 'Calendar' }
+    index: 'Product',
+    list: { name: 'ProductList', path: 'List' },
+    detail: { name: 'ProductDetail' },
+    info: { name: 'ProductInfo', path: 'Info' },
+    trend: { name: 'ProductTrend', path: 'Trend' },
+    performance: { name: 'ProductPerformance', path: 'Performance' },
+    shareHolding: { name: 'ProductShareHolding', path: 'ShareHolding' },
+    dividend: { name: 'ProductDividend', path: 'Dividend' },
+    fee: { name: 'ProductFee', path: 'Fee' },
+    account: { name: 'ProductFeeAccount', path: 'Account' },
+    rate: { name: 'ProductFeeRate', path: 'Rate' },
+    yield: { name: 'ProductYield', path: 'Yield' },
+    calendar: { name: 'ProductCalendar', path: 'Calendar' }
   },
   etf: {
     index: 'Etf',
