@@ -28,7 +28,7 @@
         </option>
       </select>
       
-      <div class="hidden grid-cols-6 gap-4 mb-16 lg:grid">
+      <div class="hidden grid-cols-6 gap-4 mb-16 lg:grid relative z-[1]">
         <RoundButton
           v-for="tab in tabs"
           :label="tab.label"

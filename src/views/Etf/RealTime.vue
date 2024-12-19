@@ -66,12 +66,22 @@
       </table>
     </div>
     
-    <div class="items-center lg:flex rounded-2xl content-card">
-      <div class="flex gap-4 mb-4 mr-10 lg:mb-0">
+    <div class="items-center lg:flex lg:gap-6 rounded-2xl content-card">
+      <div class="flex items-center gap-4 mb-4 lg:mb-0 shrink-0">
         <img src="@/assets/images/icon/estimate2.png" alt="" />
-        <p class="text-2xl text-main">即時參考匯率</p>
+        <div class="text-2xl text-main">參考匯率
+          <p class="text-sm">(2024/1/15)</p>
+        </div>
       </div>
-      <p class="text-lg font-medium">1 USD = XX.XXX TWD<span class="hidden lg:inline">；</span><br class="lg:hidden" />1 USD = X.XXX CNH<span class="hidden lg:inline">；</span><br class="lg:hidden" />1 USD = X.XXXX HKD</p>
+      
+      <div class="text-lg font-medium lg:flex lg:flex-wrap">
+        <ReferenceRate class="mr-2" number="7.2369" currency="CNH"/>
+        <ReferenceRate class="mr-2" number="7.7834" currency="HKD" />
+        <ReferenceRate class="mr-2" number="156.1000" currency="JPY" />
+        <ReferenceRate class="mr-2" number="1,396.9400" currency="KRW"  />
+        <ReferenceRate class="mr-2" number="32.4720" currency="TWD" />
+        <ReferenceRate class="mr-2" number="1.0000" currency="USD" />
+      </div>
     </div>
 
     <Hr class="my-8" />

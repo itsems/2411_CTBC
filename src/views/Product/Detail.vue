@@ -4,13 +4,13 @@
     <!-- 基金總覽 內頁-->
     <div class="pb-0 mb-4 page-layout">
       <Breadcrumb :list="breadCrumbList" />
-      <div class="items-center justify-between lg:gap-1 lg:flex lg:mb-2">
+      <div class="items-center justify-between lg:gap-8 lg:flex lg:mb-2">
         <RoundButton @click="openModal" label="切換其他基金" class="w-full mb-4 shrink-0 lg:w-auto lg:order-2 lg:!px-5 lg:mb-0" />
         <p class="mb-4 lg:mb-2 text-2xl lg:text-3xl text-[#333]">{{ fakeData.name }}</p>
       </div>
 
-      <select class="mb-4 selects lg:mb-1 lg:max-w-[223px]">
-        <option>新台幣-不配息A</option>
+      <select class="mb-4 pr-14 selects lg:mb-1 lg:w-max">
+        <option>中國信託華營貨幣市場基金</option>
         <option>新台幣-不配息A</option>
         <option>新台幣-不配息A</option>
       </select>
@@ -105,7 +105,7 @@ const breadCrumbList = [
 
 const fakeData = {
   id: 0,
-  name: '中國信託台灣活力證券投資信託基金',
+  name: '中國信託2026年到期新興優先順位債券基金 (本基金有相當比重投資於非投資等級等高風險債券)',
   netWorth: 15.74,
   date: '2022/10/05',
   fromPreviousDay: 0.25,
