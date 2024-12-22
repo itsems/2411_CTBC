@@ -1,6 +1,7 @@
 export const EVENT_TABS = {
   news: 'news',
-  speech: 'speech'
+  speech: 'speech',
+  special: 'special'
 }
 export const FUND_MAIN_TABS = {
   onshore: 'onshore ',

@@ -86,7 +86,7 @@
       <EventTabs :tabs="eventTabs" :current="currentEventTab" @tab-click="handleNewsTabClick" />
 
       <div class="pt-5 lg:pt-7">
-        <ul v-if="currentEventTab === EVENT_TABS.news">
+        <ul v-if="currentEventTab !== EVENT_TABS.speech">
           <DataListLi
             v-for="item in fakeNewsList"
             :item="item"
@@ -183,6 +183,10 @@ const eventTabs = [
   {
     name: EVENT_TABS.news,
     label: '最新公告'
+  },
+  {
+    name: EVENT_TABS.special,
+    label: '特別公告'
   },
   {
     name: EVENT_TABS.speech,
