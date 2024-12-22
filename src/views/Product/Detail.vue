@@ -9,7 +9,7 @@
         <p class="mb-4 lg:mb-2 text-2xl lg:text-3xl text-[#333]">{{ fakeData.name }}</p>
       </div>
 
-      <select class="mb-4 pr-14 selects lg:mb-1 lg:w-max">
+      <select class="mb-4 pr-14 selects lg:mb-1 w-max lg:max-w-screen-sm">
         <option>中國信託華營貨幣市場基金</option>
         <option>新台幣-不配息A</option>
         <option>新台幣-不配息A</option>
