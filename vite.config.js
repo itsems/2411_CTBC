@@ -65,7 +65,8 @@ export default defineConfig(({ command }) => {
     // command === 'build'
     return {
       ...generalConfig,
-      base: '/ems/20230728_ctbcinvestment/'
+      // https://vite.dev/guide/build.html#public-base-path
+      // base: '/'
     }
   }
 })

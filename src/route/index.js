@@ -1,11 +1,11 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { ROUTE_NAME } from '@/constants/page'
 import HomeView from '@/views/Home/index.vue'
 
 const router = createRouter({
   // https://router.vuejs.org/guide/essentials/history-mode.html
   // history mode need host configuration
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   scrollBehavior() {
     return { top: 0 }
   },
