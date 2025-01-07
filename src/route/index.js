@@ -586,6 +586,12 @@ const router = createRouter({
       ]
     },
     {
+      path: '/NAVBoard',
+      name: ROUTE_NAME.navBoard,
+      meta: { title: '最新參考淨值' },
+      component: () => import('@/views/Home/NAVBoard.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       redirect: "/",
     }

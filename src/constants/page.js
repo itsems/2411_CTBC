@@ -127,5 +127,6 @@ export const ROUTE_NAME = {
     promotionsDetail: { name: 'FaqPromotionsDetail', path: 'Detail' },
     contact: { name: 'FaqContact', path: 'Contact' },
     branch: { name: 'FaqBranch', path: 'Branch' }
-  }
+  },
+  navBoard: "NavBoard",
 }
