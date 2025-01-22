@@ -592,6 +592,12 @@ const router = createRouter({
       component: () => import('@/views/Home/NAVBoard.vue')
     },
     {
+      path: '/IvrDoc',
+      name: ROUTE_NAME.ivrDoc,
+      meta: { title: '語音查詢功能' },
+      component: () => import('@/views/Others/IvrDoc.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       redirect: "/",
     }
