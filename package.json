@@ -6,7 +6,7 @@
     "dev": "vite",
     "build:uat": "vite --base /web/ build ",
     "build": "vite build",
-    "build:dev": "vite --base /ems/ctbc_dev/ build ",
+    "build:dev": "vite --base /ems/ctbc-0727/ build ",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
