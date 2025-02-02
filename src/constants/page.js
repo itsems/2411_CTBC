@@ -129,5 +129,6 @@ export const ROUTE_NAME = {
     branch: { name: 'FaqBranch', path: 'Branch' }
   },
   navBoard: "NavBoard",
-  ivrDoc: "IvrDoc"
+  ivrDoc: "IvrDoc",
+  salesRewardDisclosure: "SalesRewardDisclosure"
 }

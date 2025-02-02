@@ -598,6 +598,12 @@ const router = createRouter({
       component: () => import('@/views/Others/IvrDoc.vue')
     },
     {
+      path: '/SalesRewardDisclosure',
+      name: ROUTE_NAME.salesRewardDisclosure,
+      meta: { title: '銷售通路報酬揭露' },
+      component: () => import('@/views/Others/SalesRewardDisclosure.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       redirect: "/",
     }
