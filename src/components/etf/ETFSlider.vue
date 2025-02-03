@@ -15,12 +15,12 @@
     >
       <SwiperSlide
         v-for="fund in funds"
-        class="flex items-stretch justify-center overflow-hidden rounded-3xl hover:shadow-xl"
+        class="flex items-center justify-center overflow-hidden rounded-3xl hover:shadow-xl"
         :key="fund.code"
       >
-        <div class="w-full h-full px-5 pt-5 pb-48 bg-white" :title="fund.name">
+        <div class="w-full h-full px-5 pt-5 pb-56 bg-white" :title="fund.name">
           <!-- ETF 類型 -->
-          <div class="inline-block px-3 py-[3px] mb-4 text-sm border border-solid rounded-3xl border-main text-main">
+          <div class="inline-block px-3 py-[3px] mb-3 text-sm border border-solid rounded-3xl border-main text-main">
             {{ fund.tag }}
           </div>
           <!-- 基金名稱 -->
@@ -31,7 +31,7 @@
           <!-- Bottom contents wrapper -->
           <div class="absolute bottom-5 w-[calc(100%-2.5rem)]">
             <!-- 基金淨值 -->
-            <div class="flex items-end justify-between mb-2 net-worth text-md">
+            <div class="flex items-end justify-between mb-5 net-worth text-md">
               <label class="text-[#999]">基金淨值</label>
               <label class="text-3xl font-black text-[#333]">
                 {{ fund.netWorth }}
@@ -50,7 +50,7 @@
               </label>
             </div>
             <div class="flex justify-between text-md text-[#999] mb-6">
-              <label>漲跌幅}</label>
+              <label>漲跌幅</label>
               <label class="font-medium" :class="isUpOrDownClass(fund.fromPreviousDayPercent)">
                 {{ fund.fromPreviousDayPercent }}%
                 <Symbol :number="fund.fromPreviousDayPercent" />
