@@ -5,26 +5,19 @@
     </div>
     <div class="px-4 py-3">
       <div class="grid grid-cols-2">
+        
         <div>
           <p class="text-md">最新市價</p>
-          <p class="text-[#333] text-2xl font-semibold">{{ fund.current }}
-            <span class="ml-1 text-md" :class="isUpOrDownClass(fund.currentChange)">
-              <Symbol :number="fund.currentChange" />
-              {{ fund.currentChange }}
-            </span>
-          </p>
+          <NumberWithChange :number=fund.current :change=fund.currentChange />
           <p class="text-md text-grey-999">昨收市價 <span>{{ fund.yesterday1 }}</span></p>
         </div>
+
         <div>
           <p class="text-md">預估淨值</p>
-          <p class="text-[#333] text-2xl font-medium">{{ fund.expectValue }}
-            <span class="ml-1 text-md" :class="isUpOrDownClass(fund.expectValueChange)">
-              <Symbol :number="fund.expectValueChange" />
-              {{ fund.expectValueChange }}
-            </span>
-          </p>
+          <NumberWithChange :number=fund.expectValue :change=fund.expectValueChange />
           <p class="text-md text-grey-999">昨收淨值 <span>{{ fund.yesterday2 }}</span></p>
         </div>
+        
       </div>
       <hr class="my-3" />
       <div class="grid items-center grid-cols-2">
@@ -38,6 +31,7 @@
 </template>
 <script setup>
 import { isUpOrDownClass } from '@/utils/is-up-or-down-class'
+import NumberWithChange from '@/components/etf/NumberWithChange.vue'
 defineProps({
   fund: Object,
 })
