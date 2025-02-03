@@ -34,7 +34,7 @@
             </p>
           </RouterLink>
         </div>
-        <div class="flex gap-5 lg:grid lg:grid-cols-3 lg:gap-6 mb-7">
+        <div class="flex gap-5 pr-6 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-6 mb-7">
           <RecommendTabs @tab-click="handleRecommendTabClick" :currentRecommendTab="currentRecommendTab" />
         </div>
         

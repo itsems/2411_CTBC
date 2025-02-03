@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center gap-4 lg:grid lg:grid-cols-3 lg:gap-8">
+  <div class="flex items-center gap-4 pr-6 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-8">
     <TabWithBar
       v-for="name in tabs"
       :key="name"
