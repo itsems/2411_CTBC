@@ -1,5 +1,5 @@
 <template>
-  <nav class="header">
+  <nav class="sticky z-10 header">
     <div class="hidden header-d lg:block">
       <div class="container relative mx-auto">
         <div class="flex items-center justify-between w-full">
