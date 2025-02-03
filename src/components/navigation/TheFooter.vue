@@ -37,7 +37,7 @@
               >
                 115台北市南港區經貿二路188號12樓
               </a>
-              <a class="hover:underline" href="tel:+886226526688">(02)2652-6688</a>
+              <a class="inline-block hover:underline" href="tel:+886226526688">(02)2652-6688</a>
             </p>
             <p class="mb-1">
               台中分公司：
@@ -48,7 +48,7 @@
               >
                 403台中市西區忠明南路499號9樓之1
               </a>
-              <a class="hover:underline" href="tel:+886423725199">(04)2372-5199</a>
+              <a class="inline-block hover:underline" href="tel:+886423725199">(04)2372-5199</a>
             </p>
             <p class="mb-1">本公司營業執照文號：110金管投信新字第012號</p>
             <p class="mb-1">本公司兼營投顧業務核准文號：金管證投字第1060004317號</p>
