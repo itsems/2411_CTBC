@@ -15,8 +15,37 @@
   </div>
   <hr class="mb-10">
 
-  <!-- Table -->
-  <div class="lg:x-8">
+  <!-- Desktop: fixed head table -->
+  <table class="hidden w-full overflow-auto border-collapse lg:table normal-table">
+    <thead>
+      <tr>
+        <th width="300px" class="sticky top-[75px] rounded-tl-2xl">基金名稱</th>
+        <th width="100px" class="sticky top-[75px]">級別</th>
+        <th width="130px" class="sticky top-[75px]">匯款銀行</th>
+        <th width="180px" class="sticky top-[75px]">匯款戶名</th>
+        <th class="sticky top-[75px]">匯款帳號</th>
+        <th class="min-w-[100px] sticky top-[75px]">單筆申購<br />最低金額</th>
+        <th class="min-w-[120px] sticky top-[75px] rounded-tr-2xl">定期定額申購<br />每次最低金額</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>中國信託ESG碳商機多重資產基金-台幣<p class="font-bold text-red">(本基金有相當比重投資於非投資等級之高風險債券且本基金之配息來源可能為本金)</p></td>
+        <td class="text-center">A. 累積型</td>
+        <td>
+          <p>中國信託銀行<br>營業部</p>
+        </td>
+        <td>中國信託高評級策略收益債券基金專戶</td>
+        <td>9013-5001-9374</td>
+        <td class="text-center">10,000</td>
+        <td class="text-center">3,000</td>
+      </tr>
+    </tbody>
+  </table>
+   
+
+  <!-- Mobile: Card -->
+  <div class="lg:hidden">
     <div class="mb-10 mobile-th-row-table text-md stripped-on-mobile-row">
       <ul class="desktop-th row-align">
         <li>基金名稱</li>
