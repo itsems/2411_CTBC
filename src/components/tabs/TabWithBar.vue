@@ -3,7 +3,7 @@
     <div class="relative flex items-center">
       <p
         :class="{ '!text-main': isActive , [textClass]: textClass }"
-        class="break-keep flex items-center transitions pr-[18px] select-none text-lg text-[#a6a6a6] xl:text-2xl mb-1 lg:mb-4 group-hover:text-main"
+        class="break-keep flex items-center transitions select-none text-lg text-[#a6a6a6] lg:text-2xl mb-1 lg:mb-4 group-hover:text-main"
       >
         <template v-if="$slots.activeIcon">
           <div :class="{ 'group-hover:block hidden': !isActive, block: isActive }" class="mr-2 shrink-0">

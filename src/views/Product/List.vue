@@ -1,5 +1,5 @@
 <template>
-  <GradientBackground :mobile-position="202" :desktop-position="280" />
+  <GradientBackground :mobile-position="133" :desktop-position="201" />
   <!-- 基金總覽 列表-->
   <div class="page-layout">
     <Breadcrumb :list="breadCrumbList" />
