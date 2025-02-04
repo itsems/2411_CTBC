@@ -13,8 +13,12 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
 }
 .main {
+  padding-top: 66px;
   &.bg-gray-base {
     background-color: #f4f4f4;
+  }
+  @media (min-width: 1024px) {
+    padding-top: 75px;
   }
 }
 @media (min-width: 1024px) {
