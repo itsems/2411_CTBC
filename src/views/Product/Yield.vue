@@ -59,47 +59,42 @@
           </div>
         </div>
         
-
-        <!-- desktop: table -->
-        <div class="hidden lg:block mobile-th-row-table text-md stripped-on-mobile-row">
-          <ul class="desktop-th lg:grid-cols-[30%_10%_11%_10%_12%_10%_17%]">
-            <li class="!pl-4 text-left">基金名稱</li>
-            <li>配息年月</li>
-            <li>最新配息金額</li>
-            <li>當期配息率</li>
-            <li>當期含息報酬率</li>
-            <li>配息頻率</li>
-            <li></li>
-          </ul>
-          <div v-for="(fund, idx) in fakeData" :key="idx" class="data-row !grid-cols-[90px_1fr] lg:!grid-cols-[30%_10%_11%_10%_12%_10%_17%]">
-            <div class="flex items-center th">基金名稱</div>
-            <div class="td lg:!pl-4 lg:flex lg:items-center">{{ fund.name }}</div>
-            <div class="th">配息年月</div>
-            <div class="td lg:flex lg:justify-center lg:items-center">{{ fund.month }}</div>
-            <div class="th">最新配息金額</div>
-            <div class="flex items-center td">
-              <div class="flex gap-3 lg:flex-wrap lg:gap-1 lg:justify-center">
+        <table class="w-full overflow-auto border-collapse normal-table">
+          <thead>
+            <tr>
+              <th width="30%" class="sticky top-[75px] rounded-tl-2xl">基金名稱</th>
+              <th class="sticky top-[75px]">配息年月</th>
+              <th class="sticky top-[75px]">最新配息金額</th>
+              <th class="sticky top-[75px]">當期配息率</th>
+              <th class="sticky top-[75px]">當期含息報酬率</th>
+              <th class="sticky top-[75px]">配息頻率</th>
+              <th class="sticky top-[75px] rounded-tr-2xl"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="fund in fakeData" :key="fund.id">
+              <td>{{ fund.name }}</td>
+              <td class="text-center">{{ fund.month }}</td>
+              <td class="text-center">
                 <p>{{ fund.dividend }}</p>
-                <RoundButton label="配息紀錄" text small />
-              </div>
-            </div>
-            <div class="th">當期配息率</div>
-            <div class="flex items-center lg:justify-center td">{{ fund.ratio }}</div>
-            <div class="th">當期含息報酬率</div>
-            <div class="flex items-center lg:justify-center td">{{ fund.return }}</div>
-            <div class="border-b border-white border-solid th">配息頻率</div>
-            <div class="td lg:flex lg:justify-center lg:items-center">{{ fund.frequency }}</div>
-            <div v-if="fund.onlineApply" class="col-span-2 !py-3 text-center th">
-              <a :href="fund.onlineApply">線上申購</a>
-            </div>
-            <div class="hidden lg:flex lg:justify-center lg:items-center td">
-              <a :href="fund.onlineApply" class="break-keep">
-                <RoundButton label="線上申購" class="!px-4" />
-              </a>
-            </div>
-              
-          </div>
-        </div>
+                <RoundButton
+                  label="配息紀錄"
+                  text
+                  small
+                  class="!inline-block" />
+              </td>
+              <td class="text-center">{{ fund.ratio }}</td>
+              <td class="text-center">{{ fund.return }}</td>
+              <td class="text-center">{{ fund.frequency }}</td>
+              <td>
+                <a :href="fund.onlineApply" class="break-keep">
+                  <RoundButton label="線上申購" class="!px-4" />
+                </a>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
 
         <p class="mt-10 mb-2">註：</p>
         <ul class="mb-2 ml-5 text-sm list-decimal">
