@@ -59,6 +59,7 @@
           </div>
         </div>
         
+        <!-- Desktop: fixed head table -->
         <table class="w-full overflow-auto border-collapse normal-table">
           <thead>
             <tr>
