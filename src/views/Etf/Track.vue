@@ -65,26 +65,26 @@
     </ul>
    
     <!-- desktop -->
-    <div class="overflow-x-auto shadow-2xl rounded-2xl visible-desktop-block">
-      <table class="w-full overflow-hidden bg-white rounded-2xl whitespace-nowrap lg:whitespace-normal">
-        <thead class="py-2 text-white bg-main">
+    <div class="hidden mb-10 overflow-auto shadow-xl rounded-xl overflow-unset lg:block">
+      <table class="table overflow-auto">
+        <thead class="text-white">
           <tr>
-            <th rowspan="2" class="p-2 align-middle border-r border-[#8bcaca] border-solid">基金/標的指數</th>
-            <th rowspan="2" class="p-2 align-middle border-[#8bcaca] border-solid border-x">基準日</th>
-            <th colspan="3" class="py-2 border-b border-r border-[#8bcaca] border-solid">最新</th>
-            <th colspan="3" class="py-2 border-b border-[#8bcaca] border-solid">今年以來</th>
+            <th rowspan="2" class="sticky bg-main top-[var(--nav-desktop-height)] p-2 align-middle border-r border-[#8bcaca] border-solid rounded-tl-2xl overflow-hidden">基金/標的指數</th>
+            <th rowspan="2" class="sticky bg-main top-[var(--nav-desktop-height)] p-2 align-middle border-[#8bcaca] border-solid border-x">基準日</th>
+            <th colspan="3" class="sticky bg-main top-[var(--nav-desktop-height)] py-2 border-b border-r border-[#8bcaca] border-solid">最新</th>
+            <th colspan="3" class="sticky bg-main top-[var(--nav-desktop-height)] py-2 border-b border-[#8bcaca] border-solid rounded-tr-2xl">今年以來</th>
           </tr>
           <tr>
-            <th class="p-2">淨值/指數</th>
-            <th class="p-2 break-keep">日漲跌幅</th>
-            <th class="p-2 border-r border-[#8bcaca] border-solid lg:whitespace-nowrap">日追蹤差距<br>(A)-(B)</th>
-            <th class="p-2">淨值/指數<br>(註1)</th>
-            <th class="p-2 lg:whitespace-nowrap">累積漲跌幅<br>(註2)</th>
-            <th class="p-2 lg:whitespace-nowrap">累積追蹤差距<br>(C)-(D)</th>
+            <th class="sticky bg-main top-[115px] p-2">淨值/指數</th>
+            <th class="sticky bg-main top-[115px] p-2 break-keep">日漲跌幅</th>
+            <th class="sticky bg-main top-[115px] p-2 border-r border-[#8bcaca] border-solid lg:whitespace-nowrap">日追蹤差距<br>(A)-(B)</th>
+            <th class="sticky bg-main top-[115px] p-2">淨值/指數<br>(註1)</th>
+            <th class="sticky bg-main top-[115px] p-2 lg:whitespace-nowrap">累積漲跌幅<br>(註2)</th>
+            <th class="sticky bg-main top-[115px] p-2 lg:whitespace-nowrap">累積追蹤差距<br>(C)-(D)</th>
           </tr>
         </thead>
-        <tbody v-for="(fund, idx) in fakeData" :key="fund.code" class="py-2 text-center">
-          <tr :class="{ 'bg-[#f4f4f4]': idx % 2 != 0}">
+        <tbody v-for="(fund, idx) in fakeData" :key="fund.code" class="text-center">
+          <tr :class="{ '!bg-[#f4f4f4]': idx % 2 != 0}">
             <!-- 基金/標的指數 -->
             <td class="py-3 pl-4 pr-3 text-left align-middle">
               <p class="pb-3 border-b border-solid border-[#dfdfdf]">
@@ -125,7 +125,7 @@
             <!-- 今年以來/基金/累積追蹤差距 -->
             <td rowspan="2" class="align-middle" :class="isUpOrDownClass(fund.yearTrack)">{{ fund.yearTrack }}%</td>
           </tr>
-          <tr :class="{ 'bg-[#f4f4f4]': idx % 2 != 0}">
+          <tr :class="{ '!bg-[#f4f4f4]': idx % 2 != 0}">
             <!-- 指數名稱 -->
             <td class="pb-3 pl-4 text-left">{{ fund.indexName }}</td>
             <!-- 最新/指數/淨值/指數 -->
@@ -135,7 +135,7 @@
             <!-- 今年以來/指數/淨值/指數 -->
             <td class="px-3 pb-3 align-middle">{{ fund.yearIndexNetValue }}</td>
             <!-- 今年以來/指數/累積漲跌幅 -->
-            <td class="pb-3 align-middle" :class="isUpOrDownClass(fund.yearDday)">
+            <td class="pb-3 overflow-hidden align-middle" :class="isUpOrDownClass(fund.yearDday)">
               {{ fund.yearDday }}%(D)
             </td>
             
@@ -144,6 +144,7 @@
         </tbody>
       </table>
     </div>
+    
 
     <Hr class="mb-10 mt-14" />
 
@@ -272,3 +273,32 @@ const fakeData = ref([
 
 const currentCurrency = ref('TWD')
 </script>
+<style lang="scss" scoped>
+.table {
+  tbody {
+    tr {
+    @apply bg-white;
+    }
+    &:last-of-type {
+      tr {
+        &:first-of-type {
+          td {
+            &:last-of-type {
+              @apply rounded-br-2xl overflow-hidden;
+            }
+          }
+        }
+        &:last-of-type {
+          td {
+            &:first-of-type {
+              @apply rounded-bl-2xl overflow-hidden;
+            }
+          }
+        }
+
+      }
+      
+    }
+  }
+}
+</style>
