@@ -1,9 +1,36 @@
+.normal-table-wrap {
+  @apply overflow-auto rounded-xl shadow-xl;
+  &.fixed-head {
+    @apply overflow-unset;
+    .normal-table {
+      @apply overflow-auto;
+    }
+    .th {
+      @apply sticky top-[var(--nav-desktop-height)];
+      &:first-of-type {
+        @apply rounded-tl-2xl;
+      }
+      &:last-of-type {
+        @apply rounded-tr-2xl;
+      }
+    }
+    tr:last-of-type {
+      td:first-of-type {
+        @apply rounded-bl-2xl;
+      }
+      td:last-of-type {
+        @apply rounded-br-2xl;
+      }
+    }
+  }
+}
 .normal-table {
   width: 100%;
   border-radius: 15px;
   overflow: hidden;
   background: transparent;
-  th, td {
+  th,
+  td {
     padding: 10px 15px;
     font-size: 15px;
     vertical-align: middle;
@@ -20,7 +47,8 @@
     background-color: #f4f4f4;
   }
   &.condensed {
-    th, td {
+    th,
+    td {
       padding: 10px 5px;
     }
   }

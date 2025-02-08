@@ -1,5 +1,5 @@
 .mobile-th-row-table {
-  @apply lg:bg-white rounded-2xl;
+  @apply lg:bg-white rounded-2xl text-md;
   .desktop-th {
     @apply hidden text-white text-center bg-main;
     li {
@@ -16,7 +16,7 @@
     }
   }
   .data-row {
-    @apply grid bg-white break-all ;
+    @apply grid bg-white break-all;
     @media (max-width: 1023px) {
       grid-template-columns: max-content auto;
       border-radius: 15px;
@@ -45,7 +45,7 @@
     align-items: center;
     @apply bg-main text-white;
     @media (min-width: 1024px) {
-      @apply hidden
+      @apply hidden;
     }
   }
   @media (min-width: 1024px) {
@@ -67,5 +67,19 @@
   }
   .row-td-odd {
     background-color: #f4f4f4;
+  }
+  &.desktop-fixed-head {
+    @apply overflow-unset;
+    .thead {
+      @apply hidden lg:block lg:sticky lg:top-[var(--nav-desktop-height)];
+    }
+    @media (min-width: 1024px) {
+      .fixed-th {
+        @apply py-4 px-2 text-center text-white bg-main rounded-t-2xl items-center;
+      }
+      .data-row:last-of-type {
+        @apply rounded-b-2xl;
+      }
+    }
   }
 }

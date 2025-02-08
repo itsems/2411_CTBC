@@ -8,6 +8,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .overflow-unset {
+    overflow: unset !important;
+  }
+}
+
 body {
   color: $mainFontColor;
   font-family: 'Noto Sans TC', sans-serif;
