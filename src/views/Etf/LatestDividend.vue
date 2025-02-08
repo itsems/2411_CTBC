@@ -48,15 +48,17 @@
       </div>
       
       <!-- desktop table -->
-      <div class="mb-16 overflow-auto shadow-xl visible-desktop-block fix-head-table-wrap rounded-xl">
-        <table class="normal-table fix-head-table">
+      <div class="mb-16 normal-table-wrap fixed-head visible-desktop-block">
+        <table class="normal-table fixed-head">
           <thead>
             <tr>
-              <th width="10%"><p class="pl-5 text-left">證券代碼</p></th>
-              <th width="55%" class="text-left">證券簡稱</th>
-              <th width="15%">ETF類型</th>
-              <th width="10%">配息頻率</th>
-              <th width="10%">最新公告</th>
+              <th class="th" width="10%">
+                <p class="pl-5 text-left">證券代碼</p>
+              </th>
+              <th class="text-left th" width="55%">證券簡稱</th>
+              <th class="th" width="15%">ETF類型</th>
+              <th class="th" width="10%">配息頻率</th>
+              <th class="th" width="10%">最新公告</th>
             </tr>
           </thead>
           <tbody>

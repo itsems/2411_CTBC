@@ -169,18 +169,18 @@
       </div>
 
       <!-- 列表顯示 -->
-      <div v-else class="overflow-auto shadow-xl fix-head-table-wrap rounded-xl">
-        <table class="normal-table fix-head-table has-fix-first-col">
+      <div v-else class="normal-table-wrap fixed-head">
+        <table class="normal-table">
           <thead>
             <tr>
-              <th class="text-left fix-first-col">基金名稱</th>
-              <th class="break-keep">最新淨值</th>
-              <th class="break-keep">日漲跌</th>
-              <th class="break-keep">漲跌幅(%)</th>
-              <th class="break-keep">風險等級</th>
-              <th class="break-keep">公開說明書</th>
-              <th class="break-keep">月報</th>
-              <th></th>
+              <th class="text-left th">基金名稱</th>
+              <th class="th break-keep">最新淨值</th>
+              <th class="th break-keep">日漲跌</th>
+              <th class="th break-keep">漲跌幅(%)</th>
+              <th class="th break-keep">風險等級</th>
+              <th class="th break-keep">公開說明書</th>
+              <th class="th break-keep">月報</th>
+              <th class="th"></th>
             </tr>
           </thead>
           <tbody>

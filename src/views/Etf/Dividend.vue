@@ -46,18 +46,18 @@
     </div>
 
     <!-- Table -->
-    <div class="overflow-auto shadow-xl visible-desktop-block fix-head-table-wrap rounded-xl">
-      <table class="normal-table fix-head-table has-fix-first-col">
+    <div class="normal-table-wrap fixed-head">
+      <table class="normal-table">
         <thead>
           <tr>
-            <th class="text-left fix-first-col">基金名稱</th>
-            <th class="break-keep">配息年月</th>
-            <th class="break-keep">最新配息金額</th>
-            <th class="break-keep">除息交易日</th>
-            <th class="break-keep">配息發放日</th>
-            <th class="break-keep">當期配息率</th>
-            <th class="break-keep">當期含息報酬率</th>
-            <th class="break-keep">配息頻率</th>
+            <th class="text-left th">基金名稱</th>
+            <th class="th break-keep">配息年月</th>
+            <th class="th break-keep">最新配息金額</th>
+            <th class="th">除息交易日</th>
+            <th class="th">配息發放日</th>
+            <th class="th break-keep">當期配息率</th>
+            <th class="th break-keep">當期含息報酬率</th>
+            <th class="th break-keep">配息頻率</th>
           </tr>
         </thead>
         <tbody>
@@ -77,9 +77,15 @@
             </td>
             <td>{{ etf.exDate }}</td>
             <td>{{ etf.distributionDay }}</td>
-            <td>{{ etf.ratio }}</td>
-            <td>{{ etf.ratio2 }}</td>
-            <td>{{ etf.frequency }}</td>
+            <td>
+              <p class="text-center">{{ etf.ratio }}</p>
+            </td>
+            <td>
+              <p class="text-center">{{ etf.ratio2 }}</p>
+            </td>
+            <td>
+              <p class="text-center">{{ etf.frequency }}</p>
+            </td>
           </tr>
           
         </tbody>

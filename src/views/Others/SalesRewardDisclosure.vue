@@ -10,13 +10,13 @@
       <p>投資人向本公司購買總代理或透過銷售機構購買本公司基金，於持有期間本公司或該銷售機構仍持續收取經理費分成報酬；投資人可依本公司網站設置之『通路報酬揭露專區』，查詢通路報酬揭露內容或銷售機構通路報酬揭露網址等相關資訊。</p>
     </div>
 
-    <div class="mb-10 overflow-auto shadow-xl fix-head-table-wrap rounded-xl">
-      <table class="table table-fixed normal-table fix-head-table">
+    <div class="mb-10 normal-table-wrap fixed-head">
+      <table class="normal-table">
         <thead>
           <tr>
-            <th class="w-[30%] lg:w-[50%]">銷售中信投信發行基金之銷售機構</th>
-            <th class="lg:w-[20%]">銷售機構電話</th>
-            <th class="lg:w-[30%]">通路報酬揭露網址</th>
+            <th class="th w-[30%] lg:w-[50%]">銷售中信投信發行基金之銷售機構</th>
+            <th class="th lg:w-[20%]">銷售機構電話</th>
+            <th class="th lg:w-[30%]">通路報酬揭露網址</th>
           </tr>
         </thead>
         <tbody>
@@ -30,9 +30,9 @@
             </td>
           </tr>
           <tr>
-            <th class="!rounded-none">總代理法盛投資系列基金</th>
-            <th class="!rounded-none">銷售機構電話</th>
-            <th class="!rounded-none">通路報酬揭露網址</th>
+            <th class="th !rounded-none">總代理法盛投資系列基金</th>
+            <th class="th !rounded-none">銷售機構電話</th>
+            <th class="th !rounded-none">通路報酬揭露網址</th>
           </tr>
           <tr class="text-center" v-for="item in fakeData2" :key="item.id">
             <td>{{ item.name }}</td>

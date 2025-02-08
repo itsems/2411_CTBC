@@ -8,16 +8,16 @@
     </div>
 
     <p class="mb-8 text-3xl text-main">ETF基金代碼</p>
-    <div class="mb-10 overflow-auto shadow-xl fix-head-table-wrap rounded-xl">
-      <table class="table table-fixed normal-table fix-head-table">
+    <div class="mb-10 normal-table-wrap fixed-head">
+      <table class="table normal-table">
         <thead>
           <tr>
-            <th class="w-[10%]">語音代碼</th>
-            <th class="w-[10%]">股票代碼</th>
-            <th class="w-[30%]">ETF基金名稱</th>
-            <th class="w-[10%]">語音代碼</th>
-            <th class="w-[10%]">股票代碼</th>
-            <th class="w-[30%]">ETF基金名稱</th>
+            <th class="th w-[10%]">語音代碼</th>
+            <th class="th w-[10%]">股票代碼</th>
+            <th class="th w-[30%]">ETF基金名稱</th>
+            <th class="th w-[10%]">語音代碼</th>
+            <th class="th w-[10%]">股票代碼</th>
+            <th class="th w-[30%]">ETF基金名稱</th>
           </tr>
         </thead>
         <tbody>
@@ -44,14 +44,14 @@
     </div>
 
     <p class="mb-8 text-3xl text-main">境內基金淨值代碼</p>
-    <div class="overflow-auto shadow-xl fix-head-table-wrap rounded-xl">
-      <table class="table table-fixed normal-table fix-head-table">
+    <div class="normal-table-wrap fixed-head">
+      <table class="table normal-table">
         <thead>
           <tr>
-            <th class="w-[10%]">基金語音代碼</th>
-            <th class="w-[30%]">基金名稱</th>
-            <th class="w-[10%]">基金語音代碼</th>
-            <th class="w-[30%]">ETF基金名稱</th>
+            <th class="th w-[10%]">基金語音代碼</th>
+            <th class="th w-[30%]">基金名稱</th>
+            <th class="th w-[10%]">基金語音代碼</th>
+            <th class="th w-[30%]">ETF基金名稱</th>
           </tr>
         </thead>
         <tbody>
