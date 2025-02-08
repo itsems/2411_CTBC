@@ -21,24 +21,28 @@
     </div>
 
     <!-- Table -->
-    <div class="mb-10 mobile-th-row-table text-md stripped-table stripped-on-mobile-row">
-      <ul class="desktop-th lg:grid-cols-[1fr_1fr]">
-        <li class="text-left lg:!pl-5">基金名稱</li>
-        <li class="text-left">銷售據點</li>
-      </ul>
-      <div
-        v-for="fund in fakeData"
-        :key="fund.name"
-        class="data-row lg:grid-cols-[1fr_1fr]"
-      >
-        <div class="th">基金名稱</div>
-        <div class="td lg:!pl-5">
-          {{ fund.name }}
+    <div class="mb-10 mobile-th-row-table stripped-on-mobile-row desktop-fixed-head">
+      <ul>
+        <li class="thead">
+          <div class="grid grid-cols-[1fr_1fr] fixed-th">
+            <li class="text-left lg:!pl-5">基金名稱</li>
+            <li class="text-left">銷售據點</li>
+          </div>
+        </li>
+        <div
+          v-for="fund in fakeData"
+          :key="fund.name"
+          class="data-row lg:grid-cols-[1fr_1fr]"
+        >
+          <div class="th">基金名稱</div>
+          <div class="td lg:!pl-5">
+            {{ fund.name }}
+          </div>
+          <div class="th">銷售據點</div>
+          <div class="td">{{ fund.place }}</div>
+          
         </div>
-        <div class="th">銷售據點</div>
-        <div class="td">{{ fund.place }}</div>
-        
-      </div>
+      </ul>
     </div>
     <hr>
     
