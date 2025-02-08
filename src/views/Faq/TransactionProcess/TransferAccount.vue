@@ -15,49 +15,23 @@
   </div>
   <hr class="mb-10">
 
-  <!-- Desktop: fixed head table -->
-  <table class="hidden w-full overflow-auto border-collapse lg:table normal-table">
-    <thead>
-      <tr>
-        <th width="300px" class="sticky top-[75px] rounded-tl-2xl">基金名稱</th>
-        <th width="100px" class="sticky top-[75px]">級別</th>
-        <th width="130px" class="sticky top-[75px]">匯款銀行</th>
-        <th width="180px" class="sticky top-[75px]">匯款戶名</th>
-        <th class="sticky top-[75px]">匯款帳號</th>
-        <th class="min-w-[100px] sticky top-[75px]">單筆申購<br />最低金額</th>
-        <th class="min-w-[120px] sticky top-[75px] rounded-tr-2xl">定期定額申購<br />每次最低金額</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>中國信託ESG碳商機多重資產基金-台幣<p class="font-bold text-red">(本基金有相當比重投資於非投資等級之高風險債券且本基金之配息來源可能為本金)</p></td>
-        <td class="text-center">A. 累積型</td>
-        <td>
-          <p>中國信託銀行<br>營業部</p>
-        </td>
-        <td>中國信託高評級策略收益債券基金專戶</td>
-        <td>9013-5001-9374</td>
-        <td class="text-center">10,000</td>
-        <td class="text-center">3,000</td>
-      </tr>
-    </tbody>
-  </table>
-   
 
-  <!-- Mobile: Card -->
-  <div class="lg:hidden">
-    <div class="mb-10 mobile-th-row-table text-md stripped-on-mobile-row">
-      <ul class="desktop-th row-align">
-        <li>基金名稱</li>
-        <li>級別</li>
-        <li>匯款銀行</li>
-        <li>匯款戶名</li>
-        <li>匯款帳號</li>
-        <li>單筆申購<br />最低金額</li>
-        <li>定期定額申購<br />每次最低金額</li>
-      </ul>
+  <!-- Table -->
+  <div class="mb-10 mobile-th-row-table stripped-on-mobile-row desktop-fixed-head">
+    <ul>
+      <li class="thead">
+        <div class="grid lg:grid-cols-[300px_100px_130px_180px_1fr_1fr_1fr] fixed-th">
+          <div>基金名稱</div>
+          <div>級別</div>
+          <div>匯款銀行</div>
+          <div>匯款戶名</div>
+          <div>匯款帳號</div>
+          <div>單筆申購<br />最低金額</div>
+          <div>定期定額申購<br />每次最低金額</div>
+        </div>
+      </li>
       <!-- Data row start -->
-      <div class="data-row row-align">
+      <div class="data-row lg:grid-cols-[300px_100px_130px_180px_1fr_1fr_1fr]">
         <div class="th">基金名稱</div>
         <div class="flex items-center td">
           <div>
@@ -283,7 +257,7 @@
         <div class="th">定期定額申購<br />每次最低金額</div>
         <div class="td lg:text-center">3000</div>
       </div>
-    </div>
+    </ul>
   </div>
 
   <div class="lg:px-8">
@@ -360,15 +334,3 @@ const handlePageClick = number => {
   console.log(number)
 }
 </script>
-<style land="scss" scoped>
-.row-align {
-  @apply lg:grid-cols-[300px_100px_130px_180px_1fr_1fr]
-}
-.mobile-th-row-table .td {
-  @media (max-width: 992px) {
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
-
