@@ -12,6 +12,7 @@
     <!-- Slider -->
     <div class="relative overflow-visible video-slider">
       <Swiper
+        ref="swiperRef"
         class="!px-2 !overflow-visible lg:!overflow-x-hidden lg:h-[300px]"
         :slidesPerView="'auto'"
         :spaceBetween="20"
@@ -25,6 +26,7 @@
           }
         }"
         :modules="modules"
+        @swiper="onSwiperInit"
       >
         <SwiperSlide
           v-for="video in videos"
@@ -57,9 +59,10 @@ const redirect = () => {
   emit('video-watch-more')
 }
 
-defineProps({
+const props = defineProps({
   videos: Array
 })
+const { swiperRef, onSwiperInit } = useSwiperAutoReset(() => props.funds)
 
 // Swiper Configurations
 import 'swiper/css'

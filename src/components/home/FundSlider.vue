@@ -1,6 +1,7 @@
 <template>
   <div class="relative fund-slider">
     <Swiper
+      ref="swiperRef"
       class="!p-2 !overflow-visible lg:!overflow-x-hidden"
       :slidesPerView="'auto'"
       :spaceBetween="20"
@@ -13,6 +14,7 @@
         }
       }"
       :modules="modules"
+      @swiper="onSwiperInit"
     >
       <SwiperSlide
         v-for="fund in funds"
@@ -100,9 +102,10 @@ const navigation = ref({
   prevEl: '.swiper-button-prev.fund-swiper-button'
 })
 
-defineProps({
+const props = defineProps({
   funds: Array
 })
+const { swiperRef, onSwiperInit } = useSwiperAutoReset(() => props.funds)
 </script>
 <style lang="scss">
 .fund-slider {
