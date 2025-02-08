@@ -34,27 +34,27 @@
     </div>
 
     <!-- Table -->
-    <div class="hidden mb-10 overflow-x-auto shadow-2xl rounded-3xl lg:block">
-      <table class="normal-table rounded-3xl">
+    <div class="hidden mb-10 normal-table-wrap fixed-head lg:block">
+      <table class="normal-table">
         <thead>
           <tr>
-            <th rowspan="2" class="min-w-[150px] border-r border-[#8bcaca] border-solid text-left">ETF名稱</th>
-            <th colspan="4" class="border-b border-[#8bcaca] border-solid">淨值</th>
-            <th colspan="4" class="border-b border-[#8bcaca] border-solid border-x">市價</th>
-            <th colspan="2" class="border-b border-[#8bcaca] border-solid">折溢價</th>
-            <th rowspan="2" class="border-l border-[#8bcaca] border-solid">即時追<br>蹤差距</th>
+            <th rowspan="2" class="th min-w-[150px] border-r border-[#8bcaca] border-solid text-left">ETF名稱</th>
+            <th colspan="4" class="th border-b border-[#8bcaca] border-solid">淨值</th>
+            <th colspan="4" class="th border-b border-[#8bcaca] border-solid border-x">市價</th>
+            <th colspan="2" class="th border-b border-[#8bcaca] border-solid">折溢價</th>
+            <th rowspan="2" class="th border-l border-[#8bcaca] border-solid">即時追<br>蹤差距</th>
           </tr>
           <tr>
-            <th class="break-keep">昨收淨值</th>
-            <th><p class="break-keep">預估淨值</p></th>
-            <th>漲跌</th>
-            <th class="border-r border-[#8bcaca] border-solid">漲跌幅</th>
-            <th><p class="break-keep">昨收市價</p></th>
-            <th><p class="break-keep">最新市價</p></th>
-            <th>漲跌</th>
-            <th class="border-r border-[#8bcaca] border-solid break-keep">漲跌幅</th>
-            <th>即時<br><p class="break-keep">折溢價</p></th>
-            <th class="break-keep">
+            <th class="sticky top-[118px] break-keep">昨收淨值</th>
+            <th class="sticky top-[118px]"><p class="break-keep">預估淨值</p></th>
+            <th class="sticky top-[118px]">漲跌</th>
+            <th class="sticky top-[118px] border-r border-[#8bcaca] border-solid">漲跌幅</th>
+            <th class="sticky top-[118px]"><p class="break-keep">昨收市價</p></th>
+            <th class="sticky top-[118px]"><p class="break-keep">最新市價</p></th>
+            <th class="sticky top-[118px]">漲跌</th>
+            <th class="sticky top-[118px] border-r border-[#8bcaca] border-solid break-keep">漲跌幅</th>
+            <th class="sticky top-[118px]">即時<br><p class="break-keep">折溢價</p></th>
+            <th class="sticky top-[118px] break-keep">
               折溢<br>價幅度
             </th>
           </tr>
