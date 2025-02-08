@@ -96,17 +96,17 @@
       </div>
 
       <!-- 列表顯示 -->
-      <div v-else class="overflow-auto shadow-xl fix-head-table-wrap rounded-xl">
-        <table class="normal-table fix-head-table">
+      <div v-else class="normal-table-wrap fixed-head">
+        <table class="normal-table">
           <thead>
             <tr>
-              <th>證券代碼</th>
-              <th>證券簡稱</th>
-              <th>ETF類型</th>
-              <th>淨值日期</th>
-              <th>淨值</th>
-              <th>日漲跌</th>
-              <th>漲跌幅</th>
+              <th class="th">證券代碼</th>
+              <th class="th">證券簡稱</th>
+              <th class="th">ETF類型</th>
+              <th class="th">淨值日期</th>
+              <th class="th">淨值</th>
+              <th class="th">日漲跌</th>
+              <th class="th">漲跌幅</th>
             </tr>
           </thead>
           <tbody>
