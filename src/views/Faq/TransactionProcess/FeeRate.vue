@@ -30,40 +30,44 @@
 
   <!-- Table -->
   <div class="lg:px-8">
-    <div class="mb-10 mobile-th-row-table text-md stripped-on-mobile-row">
-      <ul class="desktop-th lg:grid-cols-[2fr_2fr_5fr_3fr_3fr]">
-        <li>交易方式</li>
-        <li>基金類型</li>
-        <li class="lg:text-left">基金名稱</li>
-        <li>單筆申購<br class="lg:hidden" />手續費</li>
-        <li>定期定額<br class="lg:hidden" />申購手續費</li>
+    <div class="mb-10 mobile-th-row-table stripped-on-mobile-row desktop-fixed-head">
+      <ul>
+        <li class="thead">
+          <div class="grid grid-cols-[2fr_2fr_5fr_3fr_3fr] fixed-th">
+            <div>交易方式</div>
+            <div>基金類型</div>
+            <div>基金名稱</div>
+            <div>單筆申購手續費</div>
+            <div>定期定額申購手續費</div>
+          </div>
+        </li>
+        <div
+          v-for="fund in fakeData"
+          :key="fund.fundName"
+          class="data-row lg:grid-cols-[2fr_2fr_5fr_3fr_3fr]"
+        >
+          <div class="th">交易方式</div>
+          <div class="td lg:text-center">
+            {{ fund.tradeType }}
+          </div>
+          <div class="th">基金類型</div>
+          <div class="td lg:text-center">
+            {{ fund.fundType }}
+          </div>
+          <div class="th">基金名稱</div>
+          <div class="td">
+            {{ fund.fundName }}
+          </div>
+          <div class="th">單筆申購<br />手續費</div>
+          <div class="td lg:text-center">
+            {{ fund.feeRate }}
+          </div>
+          <div class="th">定期定額<br />申購手續費</div>
+          <div class="td lg:text-center">
+            {{ fund.routineFeeRate }}
+          </div>
+        </div>
       </ul>
-      <div
-        v-for="fund in fakeData"
-        :key="fund.fundName"
-        class="data-row lg:grid-cols-[2fr_2fr_5fr_3fr_3fr]"
-      >
-        <div class="th">交易方式</div>
-        <div class="td lg:text-center">
-          {{ fund.tradeType }}
-        </div>
-        <div class="th">基金類型</div>
-        <div class="td lg:text-center">
-          {{ fund.fundType }}
-        </div>
-        <div class="th">基金名稱</div>
-        <div class="td">
-          {{ fund.fundName }}
-        </div>
-        <div class="th">單筆申購<br />手續費</div>
-        <div class="td lg:text-center">
-          {{ fund.feeRate }}
-        </div>
-        <div class="th">定期定額<br />申購手續費</div>
-        <div class="td lg:text-center">
-          {{ fund.routineFeeRate }}
-        </div>
-      </div>
     </div>
   </div>
 
@@ -134,11 +138,3 @@ const handlePageClick = number => {
   console.log(number)
 }
 </script>
-<style lang="scss" scoped>
-.mobile-th-row-table .td {
-  @media (max-width: 992px) {
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
