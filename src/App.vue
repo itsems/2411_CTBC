@@ -58,18 +58,18 @@ const isCurrentETFPages = computed(() => currenPath.value.startsWith('/Etf'))
 const isCurrentPageHome = computed(() => router.currentRoute.value.name === ROUTE_NAME.home.name || router.currentRoute.value.name === ROUTE_NAME.etf.index)
 const isCurrentAccessibilityPages = computed(() => currenPath.value.startsWith('/Accessibility'))
 
-// let resizeTimeout
+let resizeTimeout
 const handleResize = () => {
   system.setCurrentResolution(window.innerWidth)
 }
 handleResize()
 
-// const debounceResize = () => {
-//   clearTimeout(resizeTimeout)
-//   resizeTimeout = setTimeout(() => {
-//     handleResize()
-//   }, 300)
-// }
+const debounceResize = () => {
+  clearTimeout(resizeTimeout)
+  resizeTimeout = setTimeout(() => {
+    handleResize()
+  }, 300)
+}
 
 //Hook
 // onBeforeMount(async () => {
@@ -77,14 +77,14 @@ handleResize()
 //   await getToken()
 // })
 
-// onMounted(() => {
-//   window.addEventListener('resize', debounceResize)
+onMounted(() => {
+  window.addEventListener('resize', debounceResize)
 //   getAnnounceWebTop()
-// })
+})
 
-// onBeforeUnmount(() => {
-//   window.removeEventListener('resize', debounceResize)
-// })
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', debounceResize)
+})
 
 //Lib
 // const {$_get, $_post, $_showErr, $_showMsg} = useAxios()
