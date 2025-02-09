@@ -142,7 +142,11 @@
 
       <!-- 卡片顯示 -->
       <div v-if="currentViewType === VIEW_TYPE.graph" class="lg:grid lg:grid-cols-3 lg:gap-8">
-        <FundCard v-for="fund in fakeData" :key="fund.id" :fund="fund">
+        <FundCard
+          v-for="fund in fakeData"
+          :key="fund.id"
+          :fund="fund"
+          class="mb-6 lg:mb-0">
           <template #buttons>
             <div class="grid grid-cols-2 gap-4 pt-4">
               <RouterLink :to="{ name: ROUTE_NAME.fund.trend.name, params: { id: fund.id } }">
@@ -169,18 +173,18 @@
       </div>
 
       <!-- 列表顯示 -->
-      <div v-else class="normal-table-wrap fixed-head">
+      <div v-else class="!overflow-auto lg:overflow-unset normal-table-wrap fixed-head has-fix-first-col">
         <table class="normal-table">
           <thead>
             <tr>
-              <th class="text-left th">基金名稱</th>
-              <th class="th break-keep">最新淨值</th>
-              <th class="th break-keep">日漲跌</th>
-              <th class="th break-keep">漲跌幅(%)</th>
-              <th class="th break-keep">風險等級</th>
-              <th class="th break-keep">公開說明書</th>
-              <th class="th break-keep">月報</th>
-              <th class="th"></th>
+              <th class="text-left fix-first-col lg:sticky lg:top-[var(--nav-desktop-height)] rounded-tl-2xl">基金名稱</th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">最新淨值</th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">日漲跌</th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">漲跌幅(%)</th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">風險等級</th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">公開說明書</th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">月報</th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] rounded-tr-2xl"></th>
             </tr>
           </thead>
           <tbody>
