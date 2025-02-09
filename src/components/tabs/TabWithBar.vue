@@ -2,8 +2,8 @@
   <div :class="{ active: isActive, 'cursor-pointer': !isActive }" class="group">
     <div class="relative flex items-center">
       <p
-        :class="{ '!text-main': isActive , [textClass]: textClass }"
-        class="break-keep pr-7 lg:pr-o flex items-center transitions select-none text-lg text-[#a6a6a6] lg:text-2xl mb-1 lg:mb-4 group-hover:text-main"
+        :class="{ '!text-main': isActive , 'pr-7': shouldShowArrow, [textClass]: textClass }"
+        class="break-keep lg:pr-o flex items-center transitions select-none text-lg text-[#a6a6a6] lg:text-2xl mb-1 lg:mb-4 group-hover:text-main"
       >
         <template v-if="$slots.activeIcon">
           <div :class="{ 'group-hover:block hidden': !isActive, block: isActive }" class="mr-2 shrink-0">
