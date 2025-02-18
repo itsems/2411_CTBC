@@ -53,5 +53,6 @@ module.exports = {
 			after: true,
     }],
     'arrow-parens': ['error', 'as-needed',],
+    'no-unused-vars': 'warn'
   }
 }

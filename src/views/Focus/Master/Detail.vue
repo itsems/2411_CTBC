@@ -3,7 +3,7 @@
   <!-- 大師開講內容頁 -->
   <div class="page-layout">
     <Breadcrumb :list="breadCrumbList" />
-    <PageTitle title="大師開講" :imagePath="PageTitleIcon" />
+    <PageTitle :size="22" title="大師開講" :imagePath="PageTitleIcon" />
 
     <div
       class="w-full pb-[57%] lg:!pb-[22%] h-full bg-cover bg-no-repeat bg-center rounded-xl shadow-xl mb-5"
@@ -43,9 +43,39 @@
           </template>
         </ContentCard>
 
+        <!-- 相關基金 -->
+        <div class="mb-16 content-card">
+          <div class="gap-12 lg:pl-4 lg:flex lg:items-start">
+            <div class="flex gap-2 mb-4 lg:mb-0">
+              <img class="w-9" src="@/assets/images/icon/scope.png" alt="" />
+              <p class="text-3xl text-main">相關基金</p>
+            </div>
+            <div>
+              <p class="mb-2 cursor-pointer hover:text-main hover:underline underline-offset-4">
+                <RouterLink :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: 0 } }" >
+                  法盛盧米斯賽勒斯美國成長股票基金
+                </RouterLink>
+              </p>
+              <p class="mb-2 cursor-pointer hover:text-main hover:underline underline-offset-4">
+                <RouterLink :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: 0 } }" >
+                  法盛AI及機器人基金
+                </RouterLink>
+              </p>
+              <p class="mb-2 cursor-pointer hover:text-main hover:underline underline-offset-4">
+                <RouterLink :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: 0 } }" >
+                  法盛-盧米斯賽勒斯債券基金
+                </RouterLink>
+              </p>
+            </div>
+            
+          </div>
+
+        </div>
+
         <!-- 上下篇 -->
         <div class="flex justify-center gap-8 mb-10">
           <PrevArticleText @click="prevArticle" />
+          <RoundButton @click="router.push({ name: ROUTE_NAME.focus.master.name })" label="回列表頁"  />
           <NextArticleText @click="nextArticle" />
         </div>
 
@@ -87,10 +117,6 @@
            
         </div>
 
-        <!-- 回列表頁 -->
-        <div class="flex justify-center">
-          <BackToListButton @click="router.push({ name: ROUTE_NAME.focus.master.name })" role="link" />
-        </div>
       </div>
 
       <!-- Ads -->
@@ -105,7 +131,7 @@
   </div>
 </template>
 <script setup>
-import PageTitleIcon from '@/assets/images/icon/hold-earth.png'
+import PageTitleIcon from '@/assets/images/icon/micro.png'
 
 const router = useRouter()
 const ROUTE_NAME = inject('ROUTE_NAME')

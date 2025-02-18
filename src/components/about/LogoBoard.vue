@@ -1,25 +1,38 @@
 <template>
   <div
-    class="relative flex items-center justify-center lg:h-[250px] mb-5 overflow-hidden bg-white shadow-xl rounded-xl logo-board"
+    class="relative lg:h-[400px] overflow-hidden content-card"
   >
-    <img :src="imageUrl" :alt="name" />
-    <a
-      href="#"
-      class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center px-8 py-10 text-white brand"
-    >
-      <div>
-        <div class="pb-2 text-lg break-all border-b border-white border-solid lg:text-center">
-          {{ name }}
-        </div>
-        <span class="block pt-2 leading-6 tracking-wide content text-md">{{ content }}</span>
-      </div>
+    <div class="lg:h-[90px] flex-center mb-6 lg:mb-0 px-6 pt-3 lg:p-0">
+      <img
+        :width="imgWidth"
+        :src="imageUrl"
+        :alt="name"
+        class="block" 
+      />
+    </div>
+    <Hr class="mb-4" />
+    <div class="mb-6 text-lg font-medium text-center text-main">
+      {{ name }}
+    </div>
+    <p :title="content" class="mb-4 content-ellipsis">{{ content }}</p>
+    
+    <a :href="link" target="_blank">
+      <RoundButton class="block mx-auto" label="了解更多"  />
     </a>
   </div>
 </template>
 <script setup>
+import Hr from '@/components/Hr.vue'
+import RoundButton from '@/components/form/RoundButton.vue'
+
+
 defineProps({
   imageUrl: {
     type: String,
+    default: undefined
+  },
+  imgWidth: {
+    type: Number,
     default: undefined
   },
   name: {
@@ -29,22 +42,15 @@ defineProps({
   content: {
     type: String,
     default: undefined
+  },
+  link: {
+    type: String,
+    default: undefined
   }
 })
 </script>
 <style lang="scss" scoped>
-.logo-board {
-  .brand {
-    opacity: 0;
-    visibility: hidden;
-    background-color: $mainGreen;
-    transition: all 0.3s;
-  }
-  &:hover {
-    .brand {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
+.content-ellipsis {
+  @include generateDesktopContentStyle(1.7, 16px, 5)
 }
 </style>
