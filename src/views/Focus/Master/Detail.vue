@@ -3,7 +3,11 @@
   <!-- 大師開講內容頁 -->
   <div class="page-layout">
     <Breadcrumb :list="breadCrumbList" />
-    <PageTitle :size="22" title="大師開講" :imagePath="PageTitleIcon" />
+    <PageTitle
+      :size="22"
+      title="大師開講"
+      :imagePath="PageTitleIcon"
+    />
 
     <div
       class="w-full pb-[57%] lg:!pb-[22%] h-full bg-cover bg-no-repeat bg-center rounded-xl shadow-xl mb-5"
@@ -15,11 +19,13 @@
       <div class="mb-8 lg:flex-grow lg:w-0">
         <ContentCard :post="fakeData" class="mb-5">
           <template #info>
+            <!-- logo image or type -->
             <TypeWithDate
-              type="市場類別"
+              :partner="PARTNER.LOOMIS_SAYLES"
               date="YYYY/MM/DD"
               class="mb-4"
             />
+            
             <div class="flex gap-3 mb-6">
               <span class="hash-tag">#台股</span>
               <span class="hash-tag">#新興市場</span>
@@ -47,8 +53,14 @@
         <div class="mb-16 content-card">
           <div class="gap-12 lg:pl-4 lg:flex lg:items-start">
             <div class="flex gap-2 mb-4 lg:mb-0">
-              <img class="w-9" src="@/assets/images/icon/scope.png" alt="" />
-              <p class="text-3xl text-main">相關基金</p>
+              <img
+                class="w-9"
+                src="@/assets/images/icon/scope.png"
+                alt=""
+              />
+              <p class="text-3xl text-main">
+                相關基金
+              </p>
             </div>
             <div>
               <p class="mb-2 cursor-pointer hover:text-main hover:underline underline-offset-4">
@@ -123,8 +135,16 @@
       <div class="lg:w-[255px]">
         <SubscribeBlock class="mb-5" />
         <div class="hidden gap-6 lg:block lg:grid-cols-1">
-          <img class="cursor-pointer" src="@/assets/images/ad1.png" alt="" />
-          <img class="cursor-pointer" src="@/assets/images/ad2.png" alt="" />
+          <img
+            class="cursor-pointer"
+            src="@/assets/images/ad1.png"
+            alt=""
+          />
+          <img
+            class="cursor-pointer"
+            src="@/assets/images/ad2.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -132,6 +152,7 @@
 </template>
 <script setup>
 import PageTitleIcon from '@/assets/images/icon/micro.png'
+import { PARTNER } from '@/constants/partner'
 
 const router = useRouter()
 const ROUTE_NAME = inject('ROUTE_NAME')

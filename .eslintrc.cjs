@@ -19,7 +19,7 @@ module.exports = {
       'error',
       {
         singleline: {
-          max: 3,
+          max: 2,
         },
         multiline: {
           max: 1,
@@ -53,6 +53,15 @@ module.exports = {
 			after: true,
     }],
     'arrow-parens': ['error', 'as-needed',],
-    'no-unused-vars': 'warn'
+    'no-unused-vars': 'warn',
+    'vue/singleline-html-element-content-newline': ['error', {
+      'ignoreWhenNoAttributes': false,
+      'ignoreWhenEmpty': true,
+      'ignores': ['span', 'a', 'small']
+    }],
+    'vue/html-closing-bracket-newline': ['error', {
+      'singleline': 'never',
+      'multiline': 'always'
+    }]
   }
 }

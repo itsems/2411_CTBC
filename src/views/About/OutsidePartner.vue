@@ -2,7 +2,11 @@
   <GradientBackground :mobile-position="240" :desktop-position="205" />
   <div class="page-layout">
     <Breadcrumb :list="breadCrumbList" />
-    <PageTitle title="認識法盛" :size="26" :imagePath="PageTitleIcon" />
+    <PageTitle
+      title="認識法盛"
+      :size="26"
+      :imagePath="PageTitleIcon"
+    />
 
     <div class="relative block image-text-wrap">
       <div class="relative block">
@@ -17,8 +21,12 @@
           alt="法盛投資管理"
         />
         <div class="leading-7 mb-14">
-          <h3 class="mb-5 text-2xl font-bold title text-darkGreen">總代理伙伴一法盛投資管理</h3>
-          <p class="mb-1 text-lg font-medium text-main">傳承百年金融智慧</p>
+          <h3 class="mb-5 text-2xl font-bold title text-darkGreen">
+            總代理伙伴一法盛投資管理
+          </h3>
+          <p class="mb-1 text-lg font-medium text-main">
+            傳承百年金融智慧
+          </p>
           <p class="mb-5 text-md lg:mb-10">
             法盛投資管理集團隸屬於超過200年歷史、法國第二大金融集團BPCE，旗下擁有超過20個資產管理公司及投資品牌，橫跨歐、亞、美三大洲，各自擅長不同投資風格及資產類別，運用「主動思維（Active
             Thinking℠）」創造前瞻性解決方案，帶領客戶追求出眾績效。自2012年以來，已獲得14座基金大獎肯定，顯示其管理能力備受客戶及專業機構肯定，資產管理規模近1.4兆美元(更新至2021/12/31)。
