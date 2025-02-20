@@ -41,32 +41,29 @@
       <div class="mb-8 lg:flex-grow">
         <!-- Cards -->
         <ResponsiveCard
-          @card-click="handleRedirect( post.id )"
+          @card-click="handleRedirect(post.id)"
           v-for="post in fakeData"
           :key="post"
           :post="post"
-          class="mb-5 group"
+          :content-class="'lg:!pb-0'"
+          class="mb-5"
         >
           <template #sub-title>
-            {{ post.date }}
+            {{ post.type }} <span class="mx-2">|</span>{{ post.date }}
           </template>
           <template #title>
-            <p class="mb-3" :title="post.title">
+            <p class="mb-3 card-title-ellipsis" :title="post.title">
               {{ post.title }}
             </p>
           </template>
           <template #content>
-            <p :title="post.content" class="mb-8 art-text-ellipsis lg:text-base lg:mb-4">
+            <p :title="post.content" class="mb-2 content-text-ellipsis lg:text-base">
               {{ post.content }}
             </p>
-            <div
-              class="w-[30px] h-[30px] rounded-full bg-grey-999 flex justify-center items-center absolute right-4 bottom-[14px] group-hover:bg-main"
-            >
-              <img
-                width="16"
-                src="@/assets/images/icon/plus-w.png"
-                alt=""
-              />
+            <div class="flex gap-3 lg:mb-6">
+              <span class="hash-tag">#台股</span>
+              <span class="hash-tag">#新興市場</span>
+              <span class="hash-tag">#聯準會</span>
             </div>
           </template>
         </ResponsiveCard>
@@ -115,6 +112,7 @@ const fakeData = ref([
   {
     id: 0,
     date: '2022/10/02',
+    type: '台股',
     title: '通用人工智慧為何大熱門？',
     content:
       '近年人工智慧（AI）不斷發展，並逐漸深入我們的日常生活，網路搜尋、電動車、Siri等語音助理均是應用範疇，不過AI發展不止於此。通用人工智慧（AGI）亦稱為「強AI（Strong AI）」，可謂AI發展的下一階段。目前AI系統已可收集大量數據，而AGI不同之處是能理解數據，近似人類認知能力（如：學習、思辨、解決問題、語言溝通）之理論型人工智慧，簡單來說，即能夠如同人類般思考、甚至學習。',
@@ -123,6 +121,7 @@ const fakeData = ref([
   {
     id: 1,
     date: '2022/10/05',
+    type: '美股',
     title: '「邊緣債券」為何值得關注？',
     content:
       '邊緣債券（crossover bonds）信評介於投資等級、非投資等級之間，超額報酬潛力雄厚。法盛-盧米斯賽勒斯債券基金（本基金有相當比重投資於非投資等級之高風險債券且基金之配息來源可能為本金）經理人馬修．伊根（Matthew J. Eagan）擁有數十年投資經驗，在接受採訪時進一步說明其研究團隊如何藉獨特流程於信用循環各階段精準選債，以及目前值得留意之領域。',
@@ -131,6 +130,7 @@ const fakeData = ref([
   {
     id: 2,
     date: '2022/10/8',
+    type: '台股',
     title: '成長投資絕非競速大賽',
     content:
       '如何以低波動成就股票長期增值？ 為投資組合增加有意義價值的增長通常不會在幾個月內發生。若欲造就報酬率經久不衰並步步高升，投資之企業必須有能力長時間持續茁壯，法盛盧米斯賽勒斯美國成長股票基金經理人阿齊茲（Aziz Hamzaogullari）認為企業必須具備極其久長之競爭優勢。',
@@ -139,6 +139,7 @@ const fakeData = ref([
   {
     id: 3,
     date: '2022/10/12',
+    type: '美股',
     title: '停滯性通膨何以引發熱議？',
     content: '「停滯性通膨」意指經濟成長緩慢或停滯時高通膨伴隨出現，為何這在70年代風行一詞再掀討論',
     imageUrl: 'https://picsum.photos/640/350?random=3'
@@ -146,6 +147,7 @@ const fakeData = ref([
   {
     id: 4,
     date: '2022/10/22',
+    type: '台股',
     title: '宏觀逆風 利好債市',
     content:
       '貨幣政策收緊往往曝露經濟體系內之金融超載（financial excesses）與潛藏危險。當前循環晚期環境下，貨幣政策緊縮副作用便易出現，放款標準趨嚴、金融業警報響起更非人們所樂見，惟就通膨而言，整體金融情勢緊縮可限制融資取得，連帶壓抑消費者、企業之借貸與支出。',
@@ -154,6 +156,7 @@ const fakeData = ref([
   {
     id: 5,
     date: '2022/11/13',
+    type: '美股',
     title: '債市展望暨全球投資策略',
     content:
       '回首2022年，通膨橫掃各地，於是各國央行「升升不息」、全球債券哀鴻遍野，同時美元走強，全球股票損失更是慘重，但對全球固定收益報酬而言，2023年料將成為過渡期，所幸應是邁向光明之坦途。',
@@ -162,6 +165,7 @@ const fakeData = ref([
   {
     id: 6,
     date: '2022/10/8',
+    type: '台股',
     title: '成長投資絕非競速大賽',
     content:
       '如何以低波動成就股票長期增值？ 為投資組合增加有意義價值的增長通常不會在幾個月內發生。若欲造就報酬率經久不衰並步步高升，投資之企業必須有能力長時間持續茁壯，法盛盧米斯賽勒斯美國成長股票基金經理人阿齊茲（Aziz Hamzaogullari）認為企業必須具備極其久長之競爭優勢。',
@@ -170,6 +174,7 @@ const fakeData = ref([
   {
     id: 7,
     date: '2022/10/12',
+    type: '美股',
     title: '停滯性通膨何以引發熱議？',
     content: '「停滯性通膨」意指經濟成長緩慢或停滯時高通膨伴隨出現，為何這在70年代風行一詞再掀討論',
     imageUrl: 'https://picsum.photos/640/350?random=3'
@@ -177,6 +182,7 @@ const fakeData = ref([
   {
     id: 8,
     date: '2022/10/22',
+    type: '台股',
     title: '宏觀逆風 利好債市',
     content:
       '貨幣政策收緊往往曝露經濟體系內之金融超載（financial excesses）與潛藏危險。當前循環晚期環境下，貨幣政策緊縮副作用便易出現，放款標準趨嚴、金融業警報響起更非人們所樂見，惟就通膨而言，整體金融情勢緊縮可限制融資取得，連帶壓抑消費者、企業之借貸與支出。',
@@ -185,11 +191,12 @@ const fakeData = ref([
   {
     id: 9,
     date: '2022/11/13',
+    type: '美股',
     title: '債市展望暨全球投資策略',
     content:
       '回首2022年，通膨橫掃各地，於是各國央行「升升不息」、全球債券哀鴻遍野，同時美元走強，全球股票損失更是慘重，但對全球固定收益報酬而言，2023年料將成為過渡期，所幸應是邁向光明之坦途。',
     imageUrl: 'https://picsum.photos/640/350?random=5'
-  },
+  }
 ])
 
 // Articles routing
@@ -217,9 +224,6 @@ const handlePageClick = number => {
 </style>
 
 <style lang="scss" scoped>
-.art-text-ellipsis {
-  @include generateContentStyle(15px, 3, 1.7, 16px, 2);
-}
 .card-title-ellipsis {
   @include generateContentStyle(18px, 2, 1.7, 24px, 1);
 }
