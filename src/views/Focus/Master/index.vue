@@ -4,8 +4,38 @@
 
   <div class="page-layout">
     <Breadcrumb :list="breadCrumbList" />
-    <PageTitle :size="22" title="大師開講" :imagePath="PageTitleIcon" />
+    <PageTitle
+      :size="22"
+      :imagePath="PageTitleIcon"
+      title="大師開講"
+    />
 
+    <ResponsiveCard
+      :content-class="'lg:!pb-0'"
+      @card-click="handleRedirect(fakeData[0].id)"
+      :post="fakeData[0]"
+      class="mb-5"
+    >
+      <template #sub-title>
+        {{ fakeData[0].type }} <span class="mx-2">|</span>{{ fakeData[0].date }}
+      </template>
+      <template #title>
+        <p :title="fakeData[0].title" class="mb-3 card-title-ellipsis">
+          {{ fakeData[0].title }}
+        </p>
+      </template>
+      <template #content>
+        <p :title="fakeData[0].content" class="mb-2 lg:mb-8 content-text-ellipsis lg:text-base">
+          {{ fakeData[0].content }}
+        </p>
+        <div class="flex gap-3 lg:mb-6">
+          <span class="hash-tag active">#台股</span>
+          <span class="hash-tag">#新興市場</span>
+          <span class="hash-tag">#聯準會</span>
+        </div>
+      </template>
+    </ResponsiveCard>
+    
     <div class="lg:flex lg:gap-6">
       <!-- Selection & Posts -->
       <div class="mb-8 lg:flex-grow">
@@ -21,7 +51,9 @@
             {{ post.date }}
           </template>
           <template #title>
-            <p class="mb-3" :title="post.title">{{ post.title }}</p>
+            <p class="mb-3" :title="post.title">
+              {{ post.title }}
+            </p>
           </template>
           <template #content>
             <p :title="post.content" class="mb-8 art-text-ellipsis lg:text-base lg:mb-4">
@@ -30,7 +62,11 @@
             <div
               class="w-[30px] h-[30px] rounded-full bg-grey-999 flex justify-center items-center absolute right-4 bottom-[14px] group-hover:bg-main"
             >
-              <img width="16" src="@/assets/images/icon/plus-w.png" alt="" />
+              <img
+                width="16"
+                src="@/assets/images/icon/plus-w.png"
+                alt=""
+              />
             </div>
           </template>
         </ResponsiveCard>
@@ -48,8 +84,16 @@
       <div class="lg:w-[255px]">
         <SubscribeBlock class="mb-5" />
         <div class="hidden gap-6 lg:block lg:grid-cols-1">
-          <img class="cursor-pointer" src="@/assets/images/ad1.png" alt="" />
-          <img class="cursor-pointer" src="@/assets/images/ad2.png" alt="" />
+          <img
+            class="cursor-pointer"
+            src="@/assets/images/ad1.png"
+            alt=""
+          />
+          <img
+            class="cursor-pointer"
+            src="@/assets/images/ad2.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -175,6 +219,12 @@ const handlePageClick = number => {
 <style lang="scss" scoped>
 .art-text-ellipsis {
   @include generateContentStyle(15px, 3, 1.7, 16px, 2);
+}
+.card-title-ellipsis {
+  @include generateContentStyle(18px, 2, 1.7, 24px, 1);
+}
+.content-text-ellipsis {
+  @include generateContentStyle(15px, 3, 1.7, 16px, 4);
 }
 </style>
 <style scoped>
