@@ -9,7 +9,8 @@
       :content-class="'lg:!pb-0'"
       @card-click="handleRedirect(fakeData[0].id)"
       :post="fakeData[0]"
-      class="mb-5">
+      class="mb-5"
+    >
       <template #sub-title>
         {{ fakeData[0].type }} <span class="mx-2">|</span>{{ fakeData[0].date }}
       </template>
@@ -47,7 +48,9 @@
             {{ post.type }} <span class="mx-2">|</span>{{ post.date }}
           </template>
           <template #title>
-            <p class="mb-3 card-title-ellipsis" :title="post.title">{{ post.title }}</p>
+            <p class="mb-3 card-title-ellipsis" :title="post.title">
+              {{ post.title }}
+            </p>
           </template>
           <template #content>
             <p :title="post.content" class="mb-2 content-text-ellipsis lg:text-base">
@@ -74,8 +77,16 @@
       <div class="lg:w-[255px]">
         <SubscribeBlock class="mb-5" />
         <div class="hidden gap-6 lg:block lg:grid-cols-1">
-          <img class="cursor-pointer" src="@/assets/images/ad1.png" alt="" />
-          <img class="cursor-pointer" src="@/assets/images/ad2.png" alt="" />
+          <img
+            class="cursor-pointer"
+            src="@/assets/images/ad1.png"
+            alt=""
+          />
+          <img
+            class="cursor-pointer"
+            src="@/assets/images/ad2.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
