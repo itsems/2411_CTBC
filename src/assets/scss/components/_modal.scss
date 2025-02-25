@@ -1,6 +1,6 @@
 .modal {
   .modal-header {
-    @apply mb-4 px-2
+    @apply mb-4 px-2;
   }
   .modal-container {
     min-width: 300px;
@@ -13,7 +13,7 @@
     transition: all 0.3s ease;
     position: relative;
     @media (min-width: 1024px) {
-      max-width: 600px;
+      max-width: 900px;
       padding: 30px 30px 35px;
     }
   }
@@ -23,6 +23,7 @@
     right: -20px;
     top: -25px;
     cursor: pointer;
+    z-index: 1;
   }
   .modal-body {
     margin: 20px 0;

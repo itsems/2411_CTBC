@@ -1,7 +1,15 @@
 <template>
   <Transition name="modal">
-    <div v-if="show" class="modal-mask modal" @click="$emit( 'close' )">
-      <div class="modal-container" @click.stop :class="containerClass">
+    <div
+      v-if="show"
+      class="modal-mask modal"
+      @click="$emit( 'close' )"
+    >
+      <div
+        class="modal-container"
+        :class="containerClass"
+        @click.stop
+      >
         <img
           v-if="isClosable"
           class="closebtn"
@@ -11,10 +19,12 @@
         />
         <div v-if="slots.header || header" class="modal-header">
           <slot name="header">
-            <p class="mb-4 text-2xl font-bold text-center text-darkGreen">{{ header }}</p>
+            <p class="mb-4 text-2xl font-bold text-center text-darkGreen">
+              {{ header }}
+            </p>
           </slot>
         </div>
-        <div class="modal-body" :class="bodyClass">
+        <div :class="[!props.noStyle ? 'modal-body' : '', bodyClass]">
           <slot name="body" />
         </div>
         <div class="modal-footer">
@@ -36,7 +46,8 @@ const props = defineProps({
   isClosable: {
     type: Boolean,
     default: true
-  }
+  },
+  noStyle: Boolean,
 })
 
 onMounted(() => {

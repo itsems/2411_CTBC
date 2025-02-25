@@ -130,5 +130,6 @@ export const ROUTE_NAME = {
   },
   navBoard: "NavBoard",
   ivrDoc: "IvrDoc",
-  salesRewardDisclosure: "SalesRewardDisclosure"
+  salesRewardDisclosure: "SalesRewardDisclosure",
+  closingPrice: "closingPrice"
 }

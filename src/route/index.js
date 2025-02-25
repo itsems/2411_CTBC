@@ -605,6 +605,12 @@ const router = createRouter({
       component: () => import('@/views/Others/SalesRewardDisclosure.vue')
     },
     {
+      path: '/ClosingPrice',
+      name: ROUTE_NAME.closingPrice,
+      meta: { title: '指數收盤行情' },
+      component: () => import('@/views/Others/ClosingPrice.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       redirect: "/",
     }
