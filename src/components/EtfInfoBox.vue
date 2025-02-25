@@ -1,7 +1,9 @@
 <template>
   <ul class="flex flex-wrap justify-center overflow-hidden rounded-md lg:justify-start">
     <li class="w-1/2 py-4 text-center lg:w-auto lg:pr-12 tab lg:text-left">
-      <p class="w-full text-center text-md label lg:text-left lg:pl-3">最新淨值</p>
+      <p class="w-full text-center text-md label lg:text-left lg:pl-3">
+        最新淨值
+      </p>
       <!-- 最新淨值 -->
       <p class="py-2 text-3xl font-bold text-black lg:py-3">
         {{ fund.netWorth }}
@@ -12,7 +14,9 @@
       </p>
     </li>
     <li class="w-1/2 py-4 text-center lg:w-1/4 tab">
-      <p class="w-full text-center text-md label">日漲跌</p>
+      <p class="w-full text-center text-md label">
+        日漲跌
+      </p>
       <!-- 日漲跌 -->
       <p :class="isUpOrDownClass( fund.fromPreviousDay )" class="py-2 text-3xl font-bold lg:py-3">
         {{ fund.fromPreviousDay }}
@@ -20,7 +24,9 @@
       </p>
     </li>
     <li class="w-1/2 py-4 text-center lg:w-1/4 tab">
-      <p class="w-full text-center text-md label">漲跌幅</p>
+      <p class="w-full text-center text-md label">
+        漲跌幅
+      </p>
       <!-- 漲跌幅 -->
       <p :class="isUpOrDownClass( fund.fromPreviousDayPercent )" class="py-2 text-3xl font-bold lg:py-3">
         {{ fund.fromPreviousDayPercent }}
@@ -28,7 +34,9 @@
       </p>
     </li>
     <li class="w-1/2 py-4 text-center lg:w-1/4 tab">
-      <p class="w-full text-center text-md label">風險屬性</p>
+      <p class="w-full text-center text-md label">
+        風險屬性
+      </p>
       <!-- 風險屬性 -->
       <RiskLevel :level="fund.riskLevel"></RiskLevel>
     </li>

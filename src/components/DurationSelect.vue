@@ -6,10 +6,12 @@
         :key="duration.value"
         :class="{ active: current === duration.value }"
         @click="handleDurationClick(duration.value)"
-        class="pr-3 cursor-pointer select-none lg:px-3 shrink-0 font-md lg:w-auto hover:text-main">
+        class="pr-3 cursor-pointer select-none lg:px-3 shrink-0 font-md lg:w-auto hover:text-main"
+      >
         {{ duration.label }}
       </li>
     </ul>
+    
     <img
       width="9"
       class="absolute block bg-white -right-1 top-1 lg:hidden"

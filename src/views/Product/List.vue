@@ -6,24 +6,29 @@
     <PageTitle
       title="基金總覽"
       :imagePath="PageTitleIcon"
-      :size="27" />
+      :size="27"
+    />
     <div class="grid grid-cols-2 gap-3 mb-10 lg:gap-6">
       <TabWithBar
         name="境內基金"
         @click="currenTab = FUND_MAIN_TABS.onshore"
         :isActive="isCurrentOnshore"
-        :gradientPercentage="21" />
+        :gradientPercentage="21"
+      />
       <TabWithBar
         name="境外基金"
         @click="currenTab = FUND_MAIN_TABS.overseas"
         :isActive="isCurrentOverseas"
-        :gradientPercentage="21"/>
+        :gradientPercentage="21"
+      />
     </div>
 
     <!-- 搜尋基金 -->
     <section class="mb-8 lg:grid lg:grid-cols-[85px_1fr_1fr] items-center">
       <div class="flex items-center justify-between mb-3 lg:mb-0">
-        <p>搜尋基金</p>
+        <p>
+          搜尋基金
+        </p>
         <div class="flex gap-2 lg:hidden" @click="openModal">
           <img
             width="18"
@@ -31,7 +36,9 @@
             src="@/assets/images/icon/filter2.png"
             alt=""
           />
-          <p class="text-main">篩選</p>
+          <p class="text-main">
+            篩選
+          </p>
         </div>
       </div>
       <inputButtonGroup
@@ -42,7 +49,9 @@
       />
         
       <div class="hidden lg:flex">
-        <p class="shrink-0">熱門關鍵字：</p>
+        <p class="shrink-0">
+          熱門關鍵字：
+        </p>
         
         <div v-if="isCurrentOnshore" class="flex flex-wrap gap-3">
           <RouterLink class="code-link" :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: 0 } }" >
@@ -80,7 +89,6 @@
 
     <!-- 搜尋類型 tags -->
     <section class="hidden lg:block mb-7 lg:mb-10">
-
       <SearchTags
         v-if="isCurrentOnshore"
         class="mb-3"
@@ -93,77 +101,119 @@
         :type="investRegion"
         @tab-click="selectTag"
       />
-      <SearchTags class="mb-3" :type="riskType" @tab-click="selectTag" />
+      <SearchTags
+        class="mb-3"
+        :type="riskType"
+        @tab-click="selectTag"
+      />
       <template v-if="shouldShowAdvancedFilters || isCurrentOverseas">
-        <SearchTags class="mb-3" :type="currency" @tab-click="selectTag" />
-        <SearchTags class="mb-3" :type="frequency" @tab-click="selectTag" />
+        <SearchTags
+          class="mb-3"
+          :type="currency"
+          @tab-click="selectTag"
+        />
+        <SearchTags
+          class="mb-3"
+          :type="frequency"
+          @tab-click="selectTag"
+        />
       </template>
       
       <div v-if="isCurrentOnshore" class="flex items-center gap-2 pt-8">
         <div class="h-[1px] bg-[#ababab] line" />
         <p @click="shouldShowAdvancedFilters = !shouldShowAdvancedFilters" class="flex items-center gap-2 mr-4 cursor-pointer break-keep">
           {{ filterStatusText }}
-          <img :class="{ 'rotate-180': shouldShowAdvancedFilters } " src="@/assets/images/icon/arrow-down-grey.png" alt="" />
+          <img
+            :class="{ 'rotate-180': shouldShowAdvancedFilters } "
+            src="@/assets/images/icon/arrow-down-grey.png"
+            alt=""
+          />
         </p>
         <div class="h-[1px] bg-[#ababab] line" />
       </div>
     </section>
     
     <div class="flex items-center justify-end gap-3 mb-4">
-      <p class="hidden lg:block">顯示模式</p>
+      <p class="hidden lg:block">
+        顯示模式
+      </p>
       <div @click="currentViewType = VIEW_TYPE.list">
         <img
           v-show="currentViewType === VIEW_TYPE.graph"
           class="w-5 cursor-pointer"
           src="@/assets/images/icon/view-list.png"
-          alt="" />
+          alt=""
+        />
         <img
           v-show="currentViewType === VIEW_TYPE.list"
           class="w-5 cursor-pointer"
           src="@/assets/images/icon/view-list-active.png"
-          alt="" />
+          alt=""
+        />
       </div>
       <div @click="currentViewType = VIEW_TYPE.graph">
         <img
           v-show="currentViewType === VIEW_TYPE.list"
           class="w-5 cursor-pointer"
           src="@/assets/images/icon/view-graph.png"
-          alt="" />
+          alt=""
+        />
         <img
           v-show="currentViewType === VIEW_TYPE.graph"
           class="w-5 cursor-pointer"
           src="@/assets/images/icon/view-graph-active.png"
-          alt="" />
+          alt=""
+        />
       </div>
     </div>
 
     <!-- 基金 -->
     <section>
-
       <!-- 卡片顯示 -->
       <div v-if="currentViewType === VIEW_TYPE.graph" class="lg:grid lg:grid-cols-3 lg:gap-8">
         <FundCard
           v-for="fund in fakeData"
           :key="fund.id"
           :fund="fund"
-          class="mb-6 lg:mb-0">
+          class="mb-6 lg:mb-0"
+        >
           <template #buttons>
             <div class="grid grid-cols-2 gap-4 pt-4">
               <RouterLink :to="{ name: ROUTE_NAME.fund.trend.name, params: { id: fund.id } }">
                 <RoundButton text class="group">
                   <div class="flex items-center justify-center ">
-                    <img class="w-5 mr-2 group-hover:hidden " :src="buttonValueImage" alt="" />
-                    <img class="hidden w-5 mr-2 group-hover:block" :src="buttonValueHoverImage" alt="" />
-                    <p class="font-medium select-none break-keep text-md group-hover:text-white">淨值走勢</p>
+                    <img
+                      class="w-5 mr-2 group-hover:hidden "
+                      :src="buttonValueImage"
+                      alt=""
+                    />
+                    <img
+                      class="hidden w-5 mr-2 group-hover:block"
+                      :src="buttonValueHoverImage"
+                      alt=""
+                    />
+                    <p class="font-medium select-none break-keep text-md group-hover:text-white">
+                      淨值走勢
+                    </p>
                   </div>
                 </RoundButton>
               </RouterLink>
               <RouterLink :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: fund.id } }">
                 <RoundButton text class="group">
                   <div class="flex items-center justify-center">
-                    <img class="w-5 mr-2 group-hover:hidden " :src="buttonMoreImage" alt="" />
-                    <img class="hidden w-5 mr-2 group-hover:block" :src="buttonMoreHoverImage" alt="" />
-                    <p class="font-medium select-none break-keep text-md group-hover:text-white">了解更多</p>
+                    <img
+                      class="w-5 mr-2 group-hover:hidden "
+                      :src="buttonMoreImage"
+                      alt=""
+                    />
+                    <img
+                      class="hidden w-5 mr-2 group-hover:block"
+                      :src="buttonMoreHoverImage"
+                      alt=""
+                    />
+                    <p class="font-medium select-none break-keep text-md group-hover:text-white">
+                      了解更多
+                    </p>
                   </div>
                 </RoundButton>
               </RouterLink>
@@ -177,13 +227,27 @@
         <table class="normal-table">
           <thead>
             <tr>
-              <th class="text-left fix-first-col lg:sticky lg:top-[var(--nav-desktop-height)] rounded-tl-2xl">基金名稱</th>
-              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">最新淨值</th>
-              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">日漲跌</th>
-              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">漲跌幅(%)</th>
-              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">風險等級</th>
-              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">公開說明書</th>
-              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">月報</th>
+              <th class="text-left fix-first-col lg:sticky lg:top-[var(--nav-desktop-height)] rounded-tl-2xl">
+                基金名稱
+              </th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">
+                最新淨值
+              </th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">
+                日漲跌
+              </th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">
+                漲跌幅(%)
+              </th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">
+                風險等級
+              </th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">
+                公開說明書
+              </th>
+              <th class="lg:sticky lg:top-[var(--nav-desktop-height)] break-keep">
+                月報
+              </th>
               <th class="lg:sticky lg:top-[var(--nav-desktop-height)] rounded-tr-2xl"></th>
             </tr>
           </thead>
@@ -191,13 +255,19 @@
             <tr v-for="fund in fakeData" :key="fund.id">
               <td class="lg:min-w-[273px] lg:max-w-[273px] min-w-[130px] fix-first-col">
                 <RouterLink :to="{ name: ROUTE_NAME.fund.detail.name, params: { id: fund.id } }" >
-                  <p class="hover:underline">{{ fund.name }}</p>
+                  <p class="hover:underline">
+                    {{ fund.name }}
+                  </p>
                 </RouterLink>
               </td>
               <td>
                 <div class="text-center">
-                  <p>{{ fund.netWorth }}</p>
-                  <p>({{ fund.date}})</p>
+                  <p>
+                    {{ fund.netWorth }}
+                  </p>
+                  <p>
+                    ({{ fund.date}})
+                  </p>
                 </div>
               </td>
               <td class="min-w-[100px]">
@@ -212,11 +282,10 @@
                   <Symbol :number="fund.fromPreviousDayPercent" />
                 </p>
               </td>
-              <td><p class="text-center">{{ fund.riskLevel }}</p></td>
               <td>
-                <a class="flex justify-center" href="#">
-                  <img src="@/assets/images/icon/download3.png" alt="" />
-                </a>
+                <p class="text-center">
+                  {{ fund.riskLevel }}
+                </p>
               </td>
               <td>
                 <a class="flex justify-center" href="#">
@@ -224,7 +293,16 @@
                 </a>
               </td>
               <td>
-                <a v-if="fund.onlineApply" :href="fund.onlineApply" class="break-keep">
+                <a class="flex justify-center" href="#">
+                  <img src="@/assets/images/icon/download3.png" alt="" />
+                </a>
+              </td>
+              <td>
+                <a
+                  v-if="fund.onlineApply"
+                  :href="fund.onlineApply"
+                  class="break-keep"
+                >
                   <RoundButton label="線上申購" />
                 </a>
               </td>
@@ -234,7 +312,6 @@
       </div>
 
       <RoutingButton class="block mx-auto my-10" />
-      
     </section>
   </div>
 
@@ -242,7 +319,9 @@
   <Teleport to="body">
     <Modal :show="shouldModalShow" @close="closeModal">
       <template #header>
-        <p class="mb-6 text-2xl font-bold text-center text-darkGreen">篩選條件</p>
+        <p class="mb-6 text-2xl font-bold text-center text-darkGreen">
+          篩選條件
+        </p>
         <div class="w-full h-[1px] bg-[#ababab]" />
       </template>
       <template #body>
@@ -250,22 +329,38 @@
           v-if="isCurrentOnshore"
           class="mb-3"
           :type="fundType"
-          @tab-click="selectTag" />
+          @tab-click="selectTag"
+        />
         <SearchTags
           v-if="isCurrentOnshore"
           class="mb-3"
           :type="investRegion"
-          @tab-click="selectTag" />
-        <SearchTags class="mb-3" :type="riskType" @tab-click="selectTag" />
+          @tab-click="selectTag"
+        />
+        <SearchTags
+          class="mb-3"
+          :type="riskType"
+          @tab-click="selectTag"
+        />
         <template v-if="shouldShowAdvancedFilters || isCurrentOverseas">
-          <SearchTags class="mb-3" :type="currency" @tab-click="selectTag" />
-          <SearchTags class="mb-3" :type="frequency" @tab-click="selectTag" />
+          <SearchTags
+            class="mb-3"
+            :type="currency"
+            @tab-click="selectTag"
+          />
+          <SearchTags
+            class="mb-3"
+            :type="frequency"
+            @tab-click="selectTag"
+          />
         </template>
       </template>
       <template #footer>
         <div class="w-full h-[1px] bg-[#ababab]" />
         <div class="flex items-center justify-center gap-10 pt-4">
-          <p class="underline underline-offset-4 text-[#333] font-medium">清除所有條件</p>
+          <p class="underline underline-offset-4 text-[#333] font-medium">
+            清除所有條件
+          </p>
           <RoundButton label="確定" />
         </div>
       </template>

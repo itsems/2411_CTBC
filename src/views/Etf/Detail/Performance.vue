@@ -4,34 +4,62 @@
     <table class="mb-6 shadow-xl normal-table">
       <thead>
         <tr>
-          <th width="25%">3個月</th>
-          <th width="25%">6個月</th>
-          <th width="25%">1年</th>
-          <th width="25%">2年</th>
+          <th width="25%">
+            3個月
+          </th>
+          <th width="25%">
+            6個月
+          </th>
+          <th width="25%">
+            1年
+          </th>
+          <th width="25%">
+            2年
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="!bg-white !px-2 text-center">XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
+          <td class="!bg-white !px-2 text-center">
+            XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
         </tr>
       </tbody>
     </table>
     <table class="shadow-xl normal-table">
       <thead>
         <tr>
-          <th>3年</th>
-          <th>今年以來</th>
-          <th>成立以來</th>
+          <th>
+            3年
+          </th>
+          <th>
+            今年以來
+          </th>
+          <th>
+            成立以來
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="!bg-white !px-2 text-center">XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
+          <td class="!bg-white !px-2 text-center">
+            XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
         </tr>
       </tbody>
     </table>
@@ -40,30 +68,62 @@
     <table class="mb-6 shadow-xl normal-table">
       <thead>
         <tr>
-          <th>3個月</th>
-          <th>6個月</th>
-          <th>1年</th>
-          <th>2年</th>
-          <th>3年</th>
-          <th>今年以來</th>
-          <th>成立以來</th>
+          <th>
+            3個月
+          </th>
+          <th>
+            6個月
+          </th>
+          <th>
+            1年
+          </th>
+          <th>
+            2年
+          </th>
+          <th>
+            3年
+          </th>
+          <th>
+            今年以來
+          </th>
+          <th>
+            成立以來
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="!bg-white !px-2 text-center">XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
-          <td class="!bg-white !px-2 text-center">-XX.XX</td>
+          <td class="!bg-white !px-2 text-center">
+            XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
+          <td class="!bg-white !px-2 text-center">
+            -XX.XX
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <p class="text-sm">資料來源：Lipper、中國信託投信整理</p>
-  <p class="mb-10 text-sm">資料日期：2022/10/31</p>
+  <p class="text-sm">
+    資料來源：Lipper、中國信託投信整理
+  </p>
+  <p class="mb-10 text-sm">
+    資料日期：2022/10/31
+  </p>
 
   <!-- LineChart -->
   <div class="mb-10 content-card">
@@ -92,17 +152,22 @@
         v-if="isDataLoaded"
         :chartData="fakeData"
         :label="fund.name"
-        :time="chartTime" />
+        :time="chartTime"
+      />
     </div>
   </div>
 
-  <p class="mt-10">註：</p>
+  <p class="mt-10">
+    註：
+  </p>
   <ul class="mb-10 ml-5 text-sm font-medium list -indent-5">
-    <li>(1)基金績效以該基金計價幣別表示；表格所示為含息報酬率，走勢圖為不含息之績效</li>
-    <li>(2)依投信投顧公會之廣告及營業活動行為規範之規定，基金成立滿半年以上者，方得揭露基金績效</li>
+    <li>
+      (1)基金績效以該基金計價幣別表示；表格所示為含息報酬率，走勢圖為不含息之績效
+    </li>
+    <li>
+      (2)依投信投顧公會之廣告及營業活動行為規範之規定，基金成立滿半年以上者，方得揭露基金績效
+    </li>
   </ul>
-
-
 </template>
 <script setup>
 import { DURATION } from '@/constants/fund'

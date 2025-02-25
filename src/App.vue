@@ -3,14 +3,18 @@
     <div class="relative" :class="{'!fixed': systemStatus.isLoading}">
       <!-- <TheHeader /> -->
       <ETFHeader v-if="isCurrentETFPages" />
-      <AccessibilityHeader v-else-if="isCurrentAccessibilityPages" />
+      <!-- <AccessibilityHeader v-else-if="isCurrentAccessibilityPages" /> -->
       <TheHeader v-else />
 
       <!-- 公告 -->
       <div v-if="isCurrentPageHome && isShowAnnounce" class="relative w-full z-[3] top-[66px] lg:top-[75px]">
         <PinAnnounce>
           <template #default>
-            <p v-for="item in lstAnnounce" :key="item.SNO" class="mb-1 text-sm font-medium text-[#017f7b] leading-[1.8]">
+            <p
+              v-for="item in lstAnnounce"
+              :key="item.SNO"
+              class="mb-1 text-sm font-medium text-[#017f7b] leading-[1.8]"
+            >
               {{ item.Title }}
               <span class="font-normal text-font-color" v-html="item.Content"></span>
             </p>
@@ -20,8 +24,8 @@
       <main class="relative main bg-gray-base">
         <RouterView />
       </main>
-      <TheAccessibilityFooter v-if="isCurrentAccessibilityPages" />
-      <TheFooter v-else />
+      <!-- <TheAccessibilityFooter v-if="isCurrentAccessibilityPages" /> -->
+      <TheFooter />
     </div>
     <RouterLink v-if="isCurrentETFPages" :to="{name: ROUTE_NAME.etf.index}">
       <img
@@ -29,13 +33,14 @@
         src="@/assets/images/icon/home.png"
         class="fixed z-10 cursor-pointer right-5 bottom-40 lg:bottom-20"
         alt=""
-        @click="goTop" />
+        @click="goTop"
+      />
     </RouterLink>
   </div>
   <div v-else>
     <RouterView />
   </div>
-  <Loading v-if="systemStatus.isLoading" />
+  <!-- <Loading v-if="systemStatus.isLoading" /> -->
 </template>
 
 <script setup>
