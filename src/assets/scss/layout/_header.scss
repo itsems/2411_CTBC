@@ -166,7 +166,7 @@ $full: true;
 }
 .ham-content {
   width: 312px;
-  transition: all .3s;
+  transition: all 0.3s;
   right: -100%;
   background-color: $ham-content-bg;
   padding: 0;
@@ -203,5 +203,11 @@ $full: true;
       width: 100%;
       transform: rotate(225deg);
     }
+  }
+}
+
+@media print {
+  nav {
+    display: none;
   }
 }
